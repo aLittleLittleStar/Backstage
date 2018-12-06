@@ -2,10 +2,10 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 15:04:18
+* @Last Modified time: 2018-12-06 16:16:51
 */
 html body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "微软雅黑";
   color: #FFFFFF;
   background: #F3F5F8;
@@ -224,6 +224,7 @@ table.table tr > th {
 }
 .col-9.col-md-10 {
   float: right;
+  overflow: auto;
 }
 .navbar .container-fluid{
   box-shadow: 1px 2px 0px #eee;
@@ -235,4 +236,7 @@ table.table tr > th {
 .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+#content {
+  margin-bottom: 80px;
 }

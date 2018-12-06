@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 15:10:18
+* @Last Modified time: 2018-12-06 16:26:27
 */
 $(function() {
 	$('.d-firstNav').click(function(e) {
@@ -132,8 +132,13 @@ $(function() {
 					pagePath = '/Backstage/child/contract_confirm.html';
 					i = 3;
 					break;
-				case '#waterSeting':
-					pagePath = '/Backstage/child/water_setting.html';
+				// 橱柜
+				case '#cupboard':
+					pagePath = '/Backstage/child/cupboard.html';
+					i =4;
+					break;
+				case '#wardrobe':
+					pagePath = '/Backstage/child/wardrobe.html';
 					i =4;
 					break;
 			}
@@ -143,5 +148,7 @@ $(function() {
 		}
 		var itemId = window.location.hash;
 		loadInnerItem(itemId)
+
+
     
 })

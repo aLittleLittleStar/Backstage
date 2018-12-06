@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>水电时间</title>
+	<title>衣柜</title>
 </head>
 <body>
 	<section id="firstTime">
 		<form class="form-horizontal" role="form" >
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">合同编号</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="YS-18-10-01" disabled>
+		    </div>
+		  </div>
 		  <div class="form-group">
 		    <label for="lastname" class="col-sm-2 control-label">项 目</label>
 		    <div class="col-sm-10">
@@ -34,11 +40,53 @@
 		  <div class="form-group">
 		    <label for="lastname" class="col-sm-2 control-label">复 尺</label>
 		    <div class="col-sm-10">
-		    	<input class="form-control" id="disabledInput" type="text" placeholder="复 尺">
+		    	<input class="form-control" id="disabledInput" type="text" value="21.3" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">初 测</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 5月 12" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">水 电</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 6月 12" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">备 注</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="颜色未确定" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">橱柜预定安装日期</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 5月 12" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">橱柜下单时间</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 6月 12" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">台面</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 5月 12" disabled>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">橱柜门板</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" value="2018 6月 12" disabled>
 		    </div>
 		  </div>
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">初测时间</label>
+				<label for="lastname" class="col-sm-2 control-label">衣柜预定安装日期</label>
 				<div class="col-sm-10">
 	    		<fieldset>
 	      	<div 
@@ -65,7 +113,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">水电时间：</label>
+				<label for="lastname" class="col-sm-2 control-label">衣柜下单时间</label>
 				<div class="col-sm-10">
 	    		<fieldset>
 	      	<div 
@@ -91,6 +139,12 @@
 				</div>
 			</div>
 		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">衣柜门板</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" placeholder="橱柜门板">
+		    </div>
+		  </div>
+		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		      <button type="submit" class="btn btn-primary btn-lg">提交</button>
 		    </div>
@@ -99,17 +153,16 @@
 	</section>
 </body>
 <script>
-			$('.form_datetime').datetimepicker({
-    	language:  'zh-CN',
-    	weekStart: 1,
-    	todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			forceParse: 0,
-    	showMeridian: 1,
-    	minView: "month"
-    });
+	$('.form_datetime').datetimepicker({
+  	language:  'zh-CN',
+  	weekStart: 1,
+  	todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+  	showMeridian: 1,
+  	minView: "month"
+  });
 </script>
 </html>
-
