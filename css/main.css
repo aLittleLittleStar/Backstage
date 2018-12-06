@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 16:48:00
+* @Last Modified time: 2018-12-06 18:06:02
 */
 html body {
   font-size: 14px;
@@ -238,4 +238,14 @@ table.table tr > th {
 }
 #content {
   margin-bottom: 140px;
+}
+#userList {
+  width: 100%;
+}
+.modal {
+  color: #000;
+}
+.modal-content {
+  text-align: center;
+  width: 120%;
 }
