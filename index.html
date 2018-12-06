@@ -1,44 +1,66 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>森尚宅配全屋定制流程控制系统</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
+		<style>
+
+		</style>
 </head>
 <body>
+<!-- 导航条 -->
+<!-- <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+	    <div class="navbar-header">
+	        <a class="navbar-brand" href="#">后台管理系统</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+		      <li class="unlogin">
+		      	<a href="#">
+		      		<span class="glyphicon glyphicon-log-out"></span> 退出
+		      	</a>
+		      </li>
+		    </ul>
+    </div>
+</nav> -->
 <div class="container-fluid">
   <div class="col-3 col-md-2">
 		<div class="s-side">
 			<ul>
-				<!--这部分是导航栏信息。-->
-				<li class="s-firstItem first">
-					<span class="glyphicon glyphicon-home"></span>
-					<span>首页</span>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav clearfix">
+ 				<li class="first">
+					<div class="d-firstNav s-firstNav">
 						<span class="glyphicon glyphicon-pushpin"></span>
 						<span>基础信息</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right" ></span>
+						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
 					</div>
 					<ul class="d-firstDrop s-firstDrop">
-						<li>
-							<div class="d-secondNav s-secondNav progect">
-								<span>
-									<a href="#progect">项目议定</a>
-								</span>
-							</div>
-						</li>
-						<li>
-							<div class="d-secondNav s-secondNav firstTime">
-								<span>
-									<a href="#firstTime">初测/水电</a>
-								</span>
-							</div>
-						</li>
+						<div class="s-secondItem">
+							<li data-id='baseSet'>创建项目</li>
+						</div>
+						<div class="s-secondItem">
+							<li data-id='waterSeting'>水电</li>
+						</div>
+						<div class="s-secondItem">
+							<li data-id='contractConfirm'>合同确认</li>
+						</div>
+					</ul>
+				</li>
+				<li class="first">
+					<div class="d-firstNav s-firstNav">
+						<span class="glyphicon glyphicon-time"></span>
+						<span>柜体</span>
+						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
+					</div>
+					<ul class="d-firstDrop s-firstDrop">
+						<div class="s-secondItem">
+							<li data-id='compoundRuler'>橱柜</li>
+						</div>
+						<div class="s-secondItem">
+							<li data-id='waterSeting'>衣柜</li>
+						</div>
 					</ul>
 				</li>
 				<li class="first">
@@ -48,498 +70,39 @@
 						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
 					</div>
 					<ul class="d-firstDrop s-firstDrop">
-						<li class="s-secondItem compoundRuler">
-							<a href="#compoundRuler">复 尺</a>
-						</li>
-						<li class="s-secondItem contractDetail">
-							<a href="#contractDetail">合同详情</a>
-						</li>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-plus"></span>
-						<span>添加数据</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<li class="s-secondItem otherInfo">
-							<a href="#otherInfo">门板情况</a>
-						</li>
-						<li class="s-secondItem lastTime">
-							<a href="#12313">配件情况</a>
-						</li>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-edit"></span>
-						<span>数据管理</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<li class="s-secondItem userList">
-							<a href="#userList">用户列表</a>
-						</li>
-						<li class="s-secondItem lastTime">
-							<a href="#12313">合同列表</a>
-						</li>
+						<div class="s-secondItem">
+							<li data-id='compoundRuler'>复 尺</li>
+						</div>
+						<div class="s-secondItem">
+							<li data-id='contractDetail'>1234</li>
+						</div>
 					</ul>
 				</li>
 			</ul>
 		</div>
   </div>
 	<div class="col-9 col-md-10">
-		<div class="header">
-			<nav class="navbar navbar-default" role="navigation">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <a class="navbar-brand">森尚宅配全屋定制流程控制系统</a>
-			    </div>
-			    <ul class="nav navbar-nav navbar-right">
-			      <li class="unlogin">
-			      	<a href="#">
-			      		<span class="glyphicon glyphicon-log-out"></span> 退出
-			      	</a>
-			      </li>
-			    </ul>
-			  </div>
-			</nav>
-		</div>
-		<section id="progect">
-			<form class="form-horizontal" role="form" >
-			  <div class="form-group">
-			    <label for="firstname" class="col-sm-2 control-label">业 主</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="firstname" placeholder="业 主">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">家装设计师</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="家装设计师">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="木作设计师">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary btn-lg">立即创建</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
-		<section id="firstTime">
-			<form class="form-horizontal" role="form" >
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">合同编号</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="YS-18-10-01" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">项 目</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="阎良" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">业 主</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="张三" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">家装设计师</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="李四" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="王五" disabled>
-			    </div>
-			  </div>
-				<div class="form-group">
-					<label for="lastname" class="col-sm-2 control-label">初测时间</label>
-					<div class="col-sm-10">
-		    		<fieldset>
-		      	<div 
-		        	class="input-group date form_datetime" 
-		        	data-date="2018-09-16T05:25:07Z" 
-		        	data-date-format="yyyy MM dd  - HH:ii p" 
-		        	data-link-field="dtp_input1">
-		        	<input 
-		          	class="form-control" 
-		          	size="16" 
-		          	type="text" 
-		          	value="" 
-		          	readonly />
-		        	<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-remove"></span>
-		        	</span>
-							<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-th"></span>
-		        	</span>
-		        </div>
-						<input type="hidden" id="dtp_input1" value="" /><br/>
-		    		</fieldset>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="lastname" class="col-sm-2 control-label">水电时间：</label>
-					<div class="col-sm-10">
-		    		<fieldset>
-		      	<div 
-		        	class="input-group date form_datetime" 
-		        	data-date="2018-09-16T05:25:07Z" 
-		        	data-date-format="yyyy MM dd  - HH:ii p" 
-		        	data-link-field="dtp_input1">
-		        	<input 
-		          	class="form-control" 
-		          	size="16" 
-		          	type="text" 
-		          	value="" 
-		          	readonly />
-		        	<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-remove"></span>
-		        	</span>
-							<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-th"></span>
-		        	</span>
-		        </div>
-						<input type="hidden" id="dtp_input1" value="" /><br/>
-		    		</fieldset>
-					</div>
-				</div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary btn-lg">提交</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
-		<section id="compoundRuler">
-			<form class="form-horizontal" role="form" >
-			  <div class="form-group">
-			    <label for="firstname" class="col-sm-2 control-label">复 尺</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="firstname" placeholder="复 尺">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary btn-lg">提 交</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
-		<section id="contractDetail">
-			<form class="form-horizontal" role="form" >
-			  <div class="form-group">
-			    <label for="firstname" class="col-sm-2 control-label">签合同日期</label>
-			    <div class="col-sm-10">
-		    		<fieldset>
-		      	<div 
-		        	class="input-group date form_datetime" 
-		        	data-date="2018-09-16T05:25:07Z" 
-		        	data-date-format="yyyy MM dd  - HH:ii p" 
-		        	data-link-field="dtp_input1">
-		        	<input 
-		          	class="form-control" 
-		          	size="16" 
-		          	type="text" 
-		          	value="" 
-		          	readonly />
-		        	<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-remove"></span>
-		        	</span>
-							<span class="input-group-addon">
-		          	<span class="glyphicon glyphicon-th"></span>
-		        	</span>
-		        </div>
-						<input type="hidden" id="dtp_input1" value="" /><br/>
-		    		</fieldset>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-10">
-					  <label class="checkbox-inline">
-						  <input type="checkbox" id="inlineCheckbox1" value="option1"> 方案确定
-						</label>
-						<br>
-						<label class="checkbox-inline">
-						  <input type="checkbox" id="inlineCheckbox2" value="option2"> 颜色确定
-						</label>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary btn-lg">提 交</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
-		<section id="userList">
-			<div class="container">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th>合同编号</th>
-							<th>项 目</th>
-							<th>业 主</th>
-							<th>合同确定时间</th>
-							<th>操 作</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>YS-18-10-01</td>
-							<td>阎良</td>
-							<td>张三 </td>
-							<td>2018/12/2</td>
-							<td>
-								<button 
-									type="button" 
-									class="btn btn-primary btn-sm"  
-									data-toggle="modal" 
-									data-target="#myModal">
-									编辑
-								</button>
-								<button 
-									type="button" 
-									class="btn btn-danger btn-sm"  
-									data-toggle="modal" 
-									data-target="#deleteModal">
-									删除
-								</button>
-							</td>
-						</tr>
-						<tr>
-							<td>YS-18-10-02</td>
-							<td>阎12良</td>
-							<td>wang123 </td>
-							<td>2018/2/12</td>
-							<td>
-								<button type="button" class="btn btn-primary btn-sm">编辑</button>
-								<button type="button" class="btn btn-danger btn-sm">删除</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-		<section id="otherInfo">
-			<form class="form-horizontal" role="form" >
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">合同编号</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="YS-18-10-01" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">项 目</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="阎良" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">业 主</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="张三" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">家装设计师</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="李四" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
-			    <div class="col-sm-10">
-			    	<input class="form-control" id="disabledInput" type="text" value="王五" disabled>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">柜体部分</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="柜体部分">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">水槽、电器</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="水槽、电器">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">五金配件</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="五金配件">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">实际安装时间</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="实际安装时间">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">安装遗留问题</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="漏下条子">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="lastname" class="col-sm-2 control-label">备 注</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="lastname" placeholder="已验收交工">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-primary btn-lg">立即创建</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
+		<nav class="navbar navbar-default" role="navigation">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand">森尚宅配全屋定制流程控制系统</a>
+		    </div>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li class="unlogin">
+		      	<a href="#">
+		      		<span class="glyphicon glyphicon-log-out"></span> 退出
+		      	</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+		<div id="content"></div>
 	</div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        	<span aria-hidden="true">&times;</span>
-        </button>
-        <h3 class="modal-title" id="myModalLabel">修改用户信息</h3>
-      </div>
-      <div class="modal-body">
-				<form class="form-horizontal" role="form" >
-					<div class="form-group">
-				    <label for="firstname" class="col-sm-2 control-label">合同编号</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="firstname" value="YS-18-10-01">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="firstname" class="col-sm-2 control-label">项目</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="firstname" value="阎良">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="firstname" class="col-sm-2 control-label">业 主</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="firstname" value="张三">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="firstname" class="col-sm-2 control-label">初测时间</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="firstname" value="2018/12/2">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="firstname" class="col-sm-2 control-label">水电时间</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="firstname" value="2018/12/22">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">家装设计师</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="李四">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="王五">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">橱柜门板</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="已到厂">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">柜体部分</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="已下单">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">移 门</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="待打款">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">实际安装时间</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="2018/12/24">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="lastname" class="col-sm-2 control-label">备 注</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="lastname" value="已验收交工">
-				    </div>
-				  </div>
-				</form>
-      </div>
-			<div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">提交更改</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- deleteModal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        	<span aria-hidden="true">&times;</span>
-        </button>
-        <h3 class="modal-title" id="myModalLabel">删除用户信息</h3>
-      </div>
-      <div class="modal-body">
-      	<p>您确认要删除该合同吗？</p>
-      </div>
-       <div class="modal-footer">
-        <button 
-        	type="button" 
-        	class="btn btn-default"
-          data-dismiss="modal">取消</button>
-        <button 
-        	type="button" 
-        	class="btn btn-primary"
-          id="deleteHaulBtn">确认</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 <script src="js/jquery.min.js" charset="UTF-8"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-<script src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="/Backstage/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script src="/Backstage/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

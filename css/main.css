@@ -2,16 +2,20 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-04 10:49:45
+* @Last Modified time: 2018-12-06 15:04:18
 */
 html body {
   font-size: 16px;
   font-family: "微软雅黑";
   color: #FFFFFF;
+  background: #F3F5F8;
 }
 i {
   color: #FFFFFF;
   font-size: 12px;
+}
+li {
+  list-style: none;
 }
 a {
   text-decoration: none;
@@ -105,12 +109,9 @@ button{
 .s-firstNav  {
 	padding-left: 40px;
 }
-
-.s-side .s-secondNav,
-.s-side .s-secondItem {
-  margin-left: 0px;
-	padding-left: 36%;
-}
+ul .s-secondItem {
+  padding-left: 34%;
+}    
 .s-secondNav:hover,
 .d-firstNav:hover,
 .s-secondItem:hover,
@@ -146,6 +147,10 @@ span .glyphicon.glyphicon-pushpin
     margin-top: 20px;
     margin-right: 20px;
 }
+.col-3.col-md-2 {
+  padding: 0;
+}
+
 .col-md-2 {
 	padding: 0;
   margin: 0;
@@ -154,9 +159,10 @@ span .glyphicon.glyphicon-pushpin
   min-height: 100%;
 }
 .col-md-10 {
-	position: absolute;
+	position: absolute !important;
 	right: 0;
 	padding: 0;
+  height: 100%;
 
 }
 .container-fluid>.navbar-header{
@@ -179,11 +185,8 @@ span .glyphicon.glyphicon-pushpin
 section {
   color: #000;
 }
-.col-md-10 {
-  height: 100%;
-  overflow: auto;
-}
-.col-md-10 #progect {
+.col-md-10 #progect,
+.col-md-10 #firstTime {
   margin: 0 auto;
   width: 60%;
   height: 80%;
@@ -206,12 +209,7 @@ table.table thead tr{
 table.table tr > th {
   text-align: center;
 }
-#firstTime {
-  display: none;
-  margin: 0 auto;
-  width: 60%;
-  height: 80%;
-}
+
 .table-condensed {
   color: #000;
 }
@@ -219,50 +217,22 @@ table.table tr > th {
   margin: 0 auto;
   margin-top: 100px;
 }
-#compoundRuler {
-  display: none;
-  margin: 0 auto;
-  width: 60%;
-  height: 80%;
+
+.navbar.navbar-default {
+  background: #fff;
+  margin-bottom: 0;
 }
-#contractDetail {
-  display: none;
-  margin: 0 auto;
-  width: 60%;
-  height: 80%;
+.col-9.col-md-10 {
+  float: right;
 }
-#userList {
-  display: none;
-  margin: 0 auto;
-  width: 100%;
-  height: 88%;
+.navbar .container-fluid{
+  box-shadow: 1px 2px 0px #eee;
 }
-#userList .container{
-    width: 100%;
-    padding: 20px;
+.col-md-2 {
+  position: absolute !important;
+  height: 100%;
 }
-#myModal {
-  color: #000;
-}
-.modal-dialog {
-  width: 52%;
-}
-#myModalLabel {
-  text-align: center;
-}
-.modal-content {
-  color: #000;
-}
-.modal-body p {
-  text-align: center;
-}
-#deleteModal .modal-dialog{
-  width: 40%;
-  margin-top: 120px;
-}
-#otherInfo {
-  display: none;
-  margin: 0 auto;
-  width: 60%;
-  height: 88%;
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
