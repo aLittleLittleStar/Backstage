@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 21:01:56
+* @Last Modified time: 2018-12-06 21:17:31
 */
 $(function() {
 	$('.d-firstNav').click(function(e) {
@@ -42,70 +42,6 @@ $(function() {
 			iconChevron.addClass('iconRotate');
 		}
 	}
-
-
-	// progect = $('#progect')
-	// desinger = $('#desinger')
-	// $('.progect').click(function () {
-	// 	$('#progect').show()
-	// 	$('#firstTime').hide()
-	// 	$('#compoundRuler').hide()
-	// 	$('#contractDetail').hide()
-	// 	$('#userList').hide()
-	// 	$('#otherInfo').hide()
-	// })
-	// 	$('.firstTime').click(function () {
-	// 	$('#firstTime').show()
-	// 	$('#progect').hide()
-	// 	$('#compoundRuler').hide()
-	// 	$('#contractDetail').hide()
-	// 	$('#userList').hide()
-	// 	$('#otherInfo').hide()
-	// })
-	// $('.compoundRuler').click(function () {
-	// 	$('#compoundRuler').show()
-	// 	$('#firstTime').hide()
-	// 	$('#progect').hide()
-	// 	$('#contractDetail').hide()
-	// 	$('#userList').hide()
-	// 	$('#otherInfo').hide()
-	// })
-	// $('.contractDetail').click(function () {
-	// 	$('#contractDetail').show()
-	// 	$('#firstTime').hide()
-	// 	$('#progect').hide()
-	// 	$('#compoundRuler').hide()
-	// 	$('#userList').hide()
-	// 	$('#otherInfo').hide()
-	// })
-	// $('.userList').click(function () {
-	// 	$('#userList').show()
-	// 	$('#firstTime').hide()
-	// 	$('#progect').hide()
-	// 	$('#compoundRuler').hide()
-	// 	$('#contractDetail').hide()
-	// 	$('#otherInfo').hide()
-	// })
-	// $('.otherInfo').click(function () {
-	// 	$('#otherInfo').show()
-	// 	$('#firstTime').hide()
-	// 	$('#progect').hide()
-	// 	$('#compoundRuler').hide()
-	// 	$('#contractDetail').hide()
-	// 	$('#userList').hide()
-	// })
-
-
-		// $('.form_datetime').datetimepicker({
-  //   	language:  'zh-CN',
-  //   	weekStart: 1,
-  //   	todayBtn:  1,
-		// 	autoclose: 1,
-		// 	todayHighlight: 1,
-		// 	startView: 2,
-		// 	forceParse: 0,
-  //   	showMeridian: 1
-  //   });
 
 		$(".first").on("click", "li", function() {
 			var itemId = $(this).data('id'); //获取data-id的值
