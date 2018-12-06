@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 17:54:56
+* @Last Modified time: 2018-12-06 21:01:56
 */
 $(function() {
 	$('.d-firstNav').click(function(e) {
@@ -132,40 +132,51 @@ $(function() {
 					pagePath = '/Backstage/child/contract_confirm.html';
 					i = 3;
 					break;
+				// 预定安装时间
+				case '#confirmInstallData':
+					pagePath = '/Backstage/child/confirm_install_data.html';
+					i = 4;
+					break;
 				// 橱柜
 				case '#cupboard':
 					pagePath = '/Backstage/child/cupboard.html';
-					i = 4;
+					i = 5;
 					break;
 				// 衣柜
 				case '#wardrobe':
 					pagePath = '/Backstage/child/wardrobe.html';
-					i = 5;
+					i = 6;
 					break;
 				// 其他柜体 other_cabinet_body
 				case '#other_cabinet_body':
 					pagePath = '/Backstage/child/cabinet_body.html';
-					i = 6;
+					i = 7;
 					break;
 				// 安装详情
 				case '#installDetail':
 					pagePath = '/Backstage/child/install_detail.html';
-					i = 6;
+					i = 8;
 					break;
 				// 搜索
 				case '#search':
 					pagePath = '/Backstage/child/search.html';
-					i = 6;
+					i = 9;
 					break;
 				// 搜索
 				case '#userList':
 					pagePath = '/Backstage/child/user_list.html';
-					i = 6;
+					i = 10;
 					break;
 			}
 			console.log(pagePath);
 			$("#content").load(pagePath); //加载相对应的内容
-			// console.log($("#content").load(pagePath));
+			//当前列表高亮
+			$(".s-side .s-secondItem li").click(function () {
+				var that = this;
+				$(".s-side .s-secondItem li").each(function () {
+					this.className = this == that ? 'current' : 'none'
+				})
+			})
 		}
 		var itemId = window.location.hash;
 		loadInnerItem(itemId)
