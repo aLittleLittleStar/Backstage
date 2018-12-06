@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 16:26:27
+* @Last Modified time: 2018-12-06 17:07:02
 */
 $(function() {
 	$('.d-firstNav').click(function(e) {
@@ -137,8 +137,19 @@ $(function() {
 					pagePath = '/Backstage/child/cupboard.html';
 					i =4;
 					break;
+				// 衣柜
 				case '#wardrobe':
 					pagePath = '/Backstage/child/wardrobe.html';
+					i =4;
+					break;
+				// 其他柜体 other_cabinet_body
+				case '#other_cabinet_body':
+					pagePath = '/Backstage/child/cabinet_body.html';
+					i =4;
+					break;
+				// 
+				case '#installDetail':
+					pagePath = '/Backstage/child/install_detail.html';
 					i =4;
 					break;
 			}

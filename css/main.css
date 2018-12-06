@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-06 16:16:51
+* @Last Modified time: 2018-12-06 16:48:00
 */
 html body {
   font-size: 14px;
@@ -185,8 +185,7 @@ span .glyphicon.glyphicon-pushpin
 section {
   color: #000;
 }
-.col-md-10 #progect,
-.col-md-10 #firstTime {
+.col-md-10 section {
   margin: 0 auto;
   width: 60%;
   height: 80%;
@@ -238,5 +237,5 @@ table.table tr > th {
   padding-right: 0 !important;
 }
 #content {
-  margin-bottom: 80px;
+  margin-bottom: 140px;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>其他柜体</title>
+	<title>安装详情</title>
 </head>
 <body>
 	<section>
@@ -37,7 +37,7 @@
 		    	<input class="form-control" id="disabledInput" type="text" value="王五" disabled>
 		    </div>
 		  </div>
-		  <div class="form-group">
+		  <!-- <div class="form-group">
 		    <label for="lastname" class="col-sm-2 control-label">复 尺</label>
 		    <div class="col-sm-10">
 		    	<input class="form-control" id="disabledInput" type="text" value="21.3" disabled>
@@ -102,6 +102,38 @@
 		    <div class="col-sm-10">
 		    	<input class="form-control" id="disabledInput" type="text" placeholder="其他柜体">
 		    </div>
+		  </div> -->
+			<div class="form-group">
+				<label for="lastname" class="col-sm-2 control-label">实际安装时间</label>
+				<div class="col-sm-10">
+	    		<fieldset>
+	      	<div 
+	        	class="input-group date form_datetime" 
+	        	data-date="2018-09-16T" 
+	        	data-date-format="yyyy MM dd" 
+	        	data-link-field="dtp_input1">
+	        	<input 
+	          	class="form-control" 
+	          	size="16" 
+	          	type="text" 
+	          	value="" 
+	          	readonly />
+	        	<span class="input-group-addon">
+	          	<span class="glyphicon glyphicon-remove"></span>
+	        	</span>
+						<span class="input-group-addon">
+	          	<span class="glyphicon glyphicon-th"></span>
+	        	</span>
+	        </div>
+					<input type="hidden" id="dtp_input1" value="" /><br/>
+	    		</fieldset>
+				</div>
+			</div>
+		  <div class="form-group">
+		    <label for="lastname" class="col-sm-2 control-label">安装遗留问题</label>
+		    <div class="col-sm-10">
+		    	<input class="form-control" id="disabledInput" type="text" placeholder="安装遗留问题">
+		    </div>
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
@@ -111,4 +143,18 @@
 		</form>
 	</section>
 </body>
+<script>
+	$('.form_datetime').datetimepicker({
+  	language:  'zh-CN',
+  	weekStart: 1,
+  	todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+  	showMeridian: 1,
+  	minView: "month"
+  });
+</script>
+
 </html>
