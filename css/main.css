@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-07 11:32:19
+* @Last Modified time: 2018-12-07 16:04:22
 */
 html body {
   font-size: 14px;
@@ -223,6 +223,13 @@ table.table tr > th {
 .navbar.navbar-default {
   background: #fff;
   margin-bottom: 0;
+}
+.logoimg{
+    width: 40px;
+    float: left;
+    line-height: 56px;
+    margin-left: 30px;
+    margin-top: 8px;
 }
 .col-9.col-md-10 {
   float: right;
