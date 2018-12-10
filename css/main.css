@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-10 17:10:19
+* @Last Modified time: 2018-12-10 17:17:05
 */
 html body {
   font-size: 14px;
@@ -261,5 +261,5 @@ table.table tr > th {
 }
 .modal-content {
   text-align: center;
-  width: 120%;
+  width: 100%;
 }
