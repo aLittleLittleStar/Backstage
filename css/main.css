@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-07 16:04:22
+* @Last Modified time: 2018-12-10 17:10:19
 */
 html body {
   font-size: 14px;
@@ -70,7 +70,6 @@ button{
   transform: translate(-50%, -50%);
 }
 .s-side {
-  min-width: 200px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -101,7 +100,7 @@ button{
 }
 .s-side .d-firstNav span {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 2%;
 }
 .s-side .d-firstNav i.fr {
   font-size: 25px;
@@ -110,7 +109,7 @@ button{
   background: rgb(31, 45, 61);
 }
 .s-firstNav  {
-	padding-left: 30px;
+	padding-left: 10%;
 }
 ul .s-secondItem {
   padding-left: 34%;
@@ -248,6 +247,7 @@ table.table tr > th {
 }
 #content {
   margin-bottom: 200px;
+  overflow: auto;
 }
 #userList {
   width: 100%;
