@@ -7,124 +7,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<script src="js/jquery.min.js" charset="UTF-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jqPaginator.js"></script>
+		<style>
+			body  {
+		    background: rgb(243, 245, 248);
+		    overflow: hidden;
+		    border: none;
+			}
+		</style>
 </head>
 <body>
-<div class="container-fluid">
   <div class="col-3 col-md-2 col-sm-3">
-		<div class="s-side">
-			<ul>
- 				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-pushpin"></span>
-						<span>基础信息</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<div class="s-secondItem">
-							<li data-id='baseSet'>创建项目</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='waterSeting'>水电</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='contractConfirm'>合同确认</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='confirmInstallData'>预定安装时间</li>
-						</div>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-object-align-bottom"></span>
-						<span>柜体</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<div class="s-secondItem">
-							<li data-id='cupboard'>橱柜</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='wardrobe'>衣柜</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='other_cabinet_body'>其他柜体</li>
-						</div>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-plus"></span>
-						<span>添加项目信息</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<div class="s-secondItem">
-							<li data-id='getReady'>项目准备</li>
-						</div>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-search"></span>
-						<span>搜索/查看项目</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<div class="s-secondItem">
-							<li data-id='search'>搜索</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='userList'>查看</li>
-						</div>
-					</ul>
-				</li>
-				<li class="first">
-					<div class="d-firstNav s-firstNav">
-						<span class="glyphicon glyphicon-cog"></span>
-						<span>设置</span>
-						<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
-					</div>
-					<ul class="d-firstDrop s-firstDrop">
-						<div class="s-secondItem">
-							<li data-id='installDetail'>安装详情</li>
-						</div>
-						<div class="s-secondItem">
-							<li data-id='remarks'>项目备注</li>
-						</div>
-					</ul>
-				</li>
-			</ul>
-		</div>
-  </div>
-	<div class="col-9 col-md-10 col-sm-9">
-		<div class="container-fluid">
-			<nav class="navbar navbar-default" role="navigation">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			    	<img src="img/logo.jpg" class="logoimg">
-			      <a class="navbar-brand">森尚宅配全屋定制流程控制系统</a>
-			    </div>
-			    <ul class="nav navbar-nav navbar-right">
-			      <li class="unlogin">
-			      	<a href="#">
-			      		<span class="glyphicon glyphicon-log-out"></span> 退出
-			      	</a>
-			      </li>
-			    </ul>
-			  </div>
-			</nav>
-			
-		</div>
-		<div id="content"></div>
+		<iframe src="slider.html" frameborder="0" width="100%" height="100%">
+    </iframe>
 	</div>
-</div>
-<script src="js/jquery.min.js" charset="UTF-8"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js"></script>
-<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
-<!-- <script src="/Backstage/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script> -->
-<!-- <script src="/Backstage/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script> -->
-<script src="js/main.js"></script>
+	<div class="col-9 col-md-10 col-sm-9" id="item">
+		<iframe src="header-nav.html" width="100%" height="62px" style="border: none">
+		</iframe>
+		<iframe 
+			id="changeItem"
+			src="child/base_set.html" 
+			width="100%" height="100%" 
+			style="border: none">
+		</iframe>
+	</div>
+
+	<script>
+		// $(function () {
+			// child = $(window.parent.document).find("#changeItem").attr("src");
+			// console.log(child);
+			// console.log(child.src);
+			// parent.document.getElementById("content_info").contentWindow.location.href 
+
+		// })
+	</script>
 </body>
 </html>

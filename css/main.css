@@ -2,13 +2,12 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-10 17:17:05
+* @Last Modified time: 2018-12-20 19:03:03
 */
 html body {
   font-size: 14px;
   font-family: "微软雅黑";
   color: #FFFFFF;
-  background: #F3F5F8;
 }
 i {
   color: #FFFFFF;
@@ -153,13 +152,13 @@ span .glyphicon.glyphicon-pushpin
   padding: 0;
 }
 
-.col-md-2 {
+/*.col-md-2 {
 	padding: 0;
   margin: 0;
   background-color: #324157;
   position: absolute;
   min-height: 100%;
-}
+}*/
 .col-md-10 {
 	position: absolute !important;
 	right: 0;
@@ -167,10 +166,10 @@ span .glyphicon.glyphicon-pushpin
   height: 100%;
 
 }
-.container-fluid>.navbar-header{
+/*.container-fluid>.navbar-header{
 	height: 56px;
 	line-height: 56px;
-}
+}*/
 .navbar>.container-fluid .navbar-brand{
 	margin-left: 0;
 }
@@ -201,7 +200,7 @@ section {
 .btn.btn-primary.btn-lg{
   margin-top: 20px;
 }
-table.table {
+/*table.table {
   text-align: center;
 }
 table.table thead tr{
@@ -217,34 +216,34 @@ table.table tr > th {
 .container form.form-horizontal{
   margin: 0 auto;
   margin-top: 100px;
-}
+}*/
 
-.navbar.navbar-default {
+/*.navbar.navbar-default {
   background: #fff;
   margin-bottom: 0;
-}
-.logoimg{
+}*/
+/*.logoimg{
     width: 40px;
     float: left;
     line-height: 56px;
     margin-left: 30px;
     margin-top: 8px;
-}
-.col-9.col-md-10 {
-  float: right;
-  overflow: auto;
-}
-.navbar .container-fluid{
+}*/
+/*.col-9.col-md-10 {
+  float: right;*/
+  /*overflow: auto;*/
+/*}*/
+/*.navbar .container-fluid{
   box-shadow: 1px 2px 0px #eee;
-}
+}*/
 .col-md-2 {
   position: absolute !important;
   height: 100%;
 }
-.container-fluid {
+/*.container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
+}*/
 #content {
   margin-bottom: 200px;
   overflow: auto;

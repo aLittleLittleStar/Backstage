@@ -1,43 +1,199 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>基础设置</title>
-    </head>
-    <body>
-    <section>
-      <form class="form-horizontal" role="form" >
-        <div class="form-group">
-          <label for="firstname" class="col-sm-2 control-label">项 目</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="firstname" placeholder="项 目">
+<head>
+    <meta charset="UTF-8">
+    <title>基础设置</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js" charset="UTF-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="../js/jqPaginator.js"></script>
+    <style>
+      #userList {
+        width: 100%;
+        padding-top: 40px;
+      }
+      .btn.btn-primary.btn-lg{
+        margin-top: 20px;
+      }
+      table.table {
+        text-align: center;
+      }
+      table.table thead tr{
+        background: #f5f5f5;
+      }
+      table.table tr > th {
+        text-align: center;
+      }
+
+      .table-condensed {
+        color: #000;
+      }
+      .container form.form-horizontal{
+        margin: 0 auto;
+        margin-top: 100px;
+      }
+      .progect-add {
+        margin-bottom: 20px;
+      }
+    </style>
+</head>
+<body>
+  <section id="userList">
+    <div class="container">
+      <div class="progect-add">
+        <li 
+            class="btn btn-primary btn-sm"  
+            data-toggle="modal" 
+            data-target="#setProject">
+            创建项目
+          </li>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>项目</th>
+            <th>业主</th>
+            <th>家装设计师</th>
+            <th>木作设计师</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>YS-18-10-01</td>
+            <td>阎良</td>
+            <td>张三 </td>
+            <td>2018-12-2</td>
+
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>YS-18-10-02</td>
+            <td>阎2良</td>
+            <td>wang123 </td>
+            <td>2018-10-12</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>YS-18-10-03</td>
+            <td>阎12良34</td>
+            <td>wang123 </td>
+            <td>2018-12-1</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>YS-18-10-04</td>
+            <td>阎12良34</td>
+            <td>wang123 </td>
+            <td>2018-2-2</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>YS-18-10-05</td>
+            <td>阎12良34</td>
+            <td>wang123 </td>
+            <td>2018-2-12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <ul class="pagination" id="pagination">
+      </ul>
+      <input type="hidden" id="PageCount" runat="server" />
+      <input type="hidden" id="PageSize" runat="server" value="8" />
+      <input type="hidden" id="countindex" runat="server" value="10"/>
+      <!--设置最多显示的页码数 可以手动设置 默认为7-->
+      <input type="hidden" id="visiblePages" runat="server" value="7" />
+    </div>
+  </section>
+
+
+
+<div class="modal fade" id="setProject" tabindex="-1" role="dialog" aria-labelledby="setProject">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title" id="myModalLabel">创建项目</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form" >
+          <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">项目</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstname" value="YS-18-10-01">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="firstname" class="col-sm-2 control-label">业 主</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="firstname" placeholder="业 主">
+          <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">业主</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstname" value="阎良">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="lastname" class="col-sm-2 control-label">家装设计师</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="lastname" placeholder="家装设计师">
+          <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">家装设计师</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstname" value="张三">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="lastname" placeholder="木作设计师">
+          <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="lastname" value="王五">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary btn-lg">创建项目</button>
-          </div>
-        </div>
-      </form>
-    </section>
-    </body>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">立即创建</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function loadData(num) {
+    $("#PageCount").val("89");
+  }
+
+
+
+function exeData(num, type) {
+    loadData(num);
+    loadpage();
+}
+function loadpage() {
+    var myPageCount = parseInt($("#PageCount").val());
+    var myPageSize = parseInt($("#PageSize").val());
+    var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
+    $("#countindex").val(countindex);
+
+    $.jqPaginator('#pagination', {
+        totalPages: parseInt($("#countindex").val()),
+        visiblePages: parseInt($("#visiblePages").val()),
+        currentPage: 1,
+        first: '<li class="first"><a href="javascript:;">首页</a></li>',
+        prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
+        next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
+        last: '<li class="last"><a href="javascript:;">末页</a></li>',
+        page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+        onPageChange: function (num, type) {
+            if (type == "change") {
+                exeData(num, type);
+            }
+        }
+    });
+}
+$(function () {
+    loadData(1);
+    loadpage();
+});
+</script>
+</body>
 </html>
  

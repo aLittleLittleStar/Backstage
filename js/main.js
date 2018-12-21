@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-07 11:52:12
+* @Last Modified time: 2018-12-21 17:31:38
 */
 $(function() {
 	$('.d-firstNav').click(function(e) {
@@ -43,89 +43,129 @@ $(function() {
 		}
 	}
 
-		$(".first").on("click", "li", function() {
-			var itemId = $(this).data('id'); //获取data-id的值
-			console.log('itemId', itemId);
-			window.location.hash = itemId; //设置锚点
-			loadInnerItem(itemId)
-		});
-		function loadInnerItem (itemId) {
-			var itemId = window.location.hash;
-			var pagePath, i;
-			switch(itemId) {
-				// 创建项目
-				case '#baseSet':
-					pagePath = '/Backstage/child/base_set.html';
-					i = 0;
-					break;
-				// 水电
-				case '#waterSeting':
-					pagePath = '/Backstage/child/water_setting.html';
-					i = 1;
-					break;
-				// 确认合同
-				case '#contractConfirm':
-					pagePath = '/Backstage/child/contract_confirm.html';
-					i = 3;
-					break;
-				// 预定安装时间
-				case '#confirmInstallData':
-					pagePath = '/Backstage/child/confirm_install_data.html';
-					i = 4;
-					break;
-				// 橱柜
-				case '#cupboard':
-					pagePath = '/Backstage/child/cupboard.html';
-					i = 5;
-					break;
-				// 衣柜
-				case '#wardrobe':
-					pagePath = '/Backstage/child/wardrobe.html';
-					i = 6;
-					break;
-				// 其他柜体
-				case '#other_cabinet_body':
-					pagePath = '/Backstage/child/cabinet_body.html';
-					i = 7;
-					break;
-				// 项目准备
-				case '#getReady':
-					pagePath = '/Backstage/child/get_ready.html';
-					i = 8;
-					break;
-				// 搜索
-				case '#search':
-					pagePath = '/Backstage/child/search.html';
-					i = 9;
-					break;
-				// 用户列表
-				case '#userList':
-					pagePath = '/Backstage/child/user_list.html';
-					i = 10;
-					break; 
-				// 安装详情 
-				case '#installDetail':
-					pagePath = '/Backstage/child/install_detail.html';
-					i = 11;
-					break;
-				// 安装详情 
-				case '#remarks':
-					pagePath = '/Backstage/child/remarks.html';
-					i = 12;
-					break;
-			}
-			console.log(pagePath);
-			$("#content").load(pagePath); //加载相对应的内容
-			//当前列表高亮
-			$(".s-side .s-secondItem li").click(function () {
-				var that = this;
-				$(".s-side .s-secondItem li").each(function () {
-					this.className = this == that ? 'current' : 'none'
-				})
-			})
-		}
-		var itemId = window.location.hash;
-		loadInnerItem(itemId)
+		// $(".first").on("click", "li", function() {
+		// 	var itemId = $(this).data('id'); //获取data-id的值
+		// 	console.log('itemId', itemId);
+		// 	window.location.hash = itemId; //设置锚点
+		// 	loadInnerItem(itemId)
+		// });
+		// function loadInnerItem (itemId) {
+		// 	var itemId = window.location.hash;
+		// 	var pagePath, i;
+		// 	switch(itemId) {
+		// 		// 创建项目
+		// 		case '#baseSet':
+		// 			pagePath = '/Backstage/child/base_set.html';
+		// 			i = 0;
+		// 			break;
+		// 		// 水电
+		// 		case '#waterSeting':
+		// 			pagePath = '/Backstage/child/water_setting.html';
+		// 			i = 1;
+		// 			break;
+		// 		// 确认合同
+		// 		case '#contractConfirm':
+		// 			pagePath = '/Backstage/child/contract_confirm.html';
+		// 			i = 3;
+		// 			break;
+		// 		// 预定安装时间
+		// 		case '#confirmInstallData':
+		// 			pagePath = '/Backstage/child/confirm_install_data.html';
+		// 			i = 4;
+		// 			break;
+		// 		// 橱柜
+		// 		case '#cupboard':
+		// 			pagePath = '/Backstage/child/cupboard.html';
+		// 			i = 5;
+		// 			break;
+		// 		// 衣柜
+		// 		case '#wardrobe':
+		// 			pagePath = '/Backstage/child/wardrobe.html';
+		// 			i = 6;
+		// 			break;
+		// 		// 其他柜体
+		// 		case '#other_cabinet_body':
+		// 			pagePath = '/Backstage/child/cabinet_body.html';
+		// 			i = 7;
+		// 			break;
+		// 		// 项目准备
+		// 		case '#getReady':
+		// 			pagePath = '/Backstage/child/get_ready.html';
+		// 			i = 8;
+		// 			break;
+		// 		// 搜索
+		// 		case '#search':
+		// 			pagePath = '/Backstage/child/search.html';
+		// 			i = 9;
+		// 			break;
+		// 		// 用户列表
+		// 		case '#userList':
+		// 			pagePath = '/Backstage/child/user_list.html';
+		// 			i = 10;
+		// 			break; 
+		// 		// 安装详情 
+		// 		case '#installDetail':
+		// 			pagePath = '/Backstage/child/install_detail.html';
+		// 			i = 11;
+		// 			break;
+		// 		// 安装详情 
+		// 		case '#remarks':
+		// 			pagePath = '/Backstage/child/remarks.html';
+		// 			i = 12;
+		// 			break;
+		// 	}
+		// 	console.log(pagePath);
+		// 	$("#content").load(pagePath); //加载相对应的内容
+		// 	//当前列表高亮
+		// 	$(".s-side .s-secondItem li").click(function () {
+		// 		var that = this;
+		// 		$(".s-side .s-secondItem li").each(function () {
+		// 			this.className = this == that ? 'current' : 'none'
+		// 		})
+		// 	})
+		// }
+		// var itemId = window.location.hash;
+		// loadInnerItem(itemId)
 
+		// html页面的点击替换
+		// 1.获取iframe的src
+		child = $(window.parent.document).find("#changeItem").attr("src");
+		console.log(child);
+		// 设置点击事件
+		$(".first").on("click", '#baseSet', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/base_set.html");  
+		})
+
+		$(".first").on("click", '#waterSeting', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/water_setting.html");  
+		})
+		$(".first").on("click", '#contractConfirm', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/contract_confirm.html");  
+		})
+		$(".first").on("click", '#confirmInstallData', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/confirm_install_data.html");  
+		})
+		$(".first").on("click", '#cupboard', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/cupboard.html");  
+		})
+		$(".first").on("click", '#wardrobe', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/wardrobe.html");  
+		})
+		$(".first").on("click", '#other_cabinet_body', function() {
+			$(window.parent.document).find("#changeItem").attr("src","child/cabinet_body.html");  
+		})
+		// 								$(".first").on("click", '#confirmInstallData', function() {
+		// 	$(window.parent.document).find("#changeItem").attr("src","child/confirm_install_data.html");  
+		// })
+		// 										$(".first").on("click", '#confirmInstallData', function() {
+		// 	$(window.parent.document).find("#changeItem").attr("src","child/confirm_install_data.html");  
+		// })
+
+		$(".s-side .s-secondItem li").click(function () {
+			var that = this;
+			$(".s-side .s-secondItem li").each(function () {
+				this.className = this == that ? 'current' : 'none'
+			})
+		})
 
 })
