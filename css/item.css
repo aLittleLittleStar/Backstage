@@ -1,0 +1,31 @@
+/*
+* @Author: Star
+* @Date:   2018-12-21 19:10:42
+* @Last Modified by:   Star
+* @Last Modified time: 2018-12-21 19:11:19
+*/
+
+#userList{
+  width: 100%;
+  padding-top: 40px;
+}
+.btn.btn-primary.btn-lg{
+  margin-top: 20px;
+}
+table.table {
+  text-align: center;
+}
+table.table thead tr{
+  background: #f5f5f5;
+}
+table.table tr > th {
+  text-align: center;
+}
+
+.table-condensed {
+  color: #000;
+}
+.container form.form-horizontal{
+  margin: 0 auto;
+  margin-top: 100px;
+}

@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 16:15:09
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-20 19:03:03
+* @Last Modified time: 2018-12-21 19:21:47
 */
 html body {
   font-size: 14px;
@@ -200,65 +200,7 @@ section {
 .btn.btn-primary.btn-lg{
   margin-top: 20px;
 }
-/*table.table {
-  text-align: center;
-}
-table.table thead tr{
-  background: #f5f5f5;
-}
-table.table tr > th {
-  text-align: center;
-}
-
-.table-condensed {
-  color: #000;
-}
-.container form.form-horizontal{
-  margin: 0 auto;
-  margin-top: 100px;
-}*/
-
-/*.navbar.navbar-default {
-  background: #fff;
-  margin-bottom: 0;
-}*/
-/*.logoimg{
-    width: 40px;
-    float: left;
-    line-height: 56px;
-    margin-left: 30px;
-    margin-top: 8px;
-}*/
-/*.col-9.col-md-10 {
-  float: right;*/
-  /*overflow: auto;*/
-/*}*/
-/*.navbar .container-fluid{
-  box-shadow: 1px 2px 0px #eee;
-}*/
 .col-md-2 {
   position: absolute !important;
   height: 100%;
-}
-/*.container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}*/
-#content {
-  margin-bottom: 200px;
-  overflow: auto;
-}
-#userList {
-  width: 100%;
-  padding-top: 40px;
-}
-#search {
-  padding-top: 40px;
-}
-.modal {
-  color: #000;
-}
-.modal-content {
-  text-align: center;
-  width: 100%;
 }
