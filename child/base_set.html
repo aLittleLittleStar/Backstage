@@ -8,27 +8,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script src="../js/jqPaginator.js"></script>
     <link rel="stylesheet" href="../css/item.css">
-    <style>
-      .progect-add {
-        margin-bottom: 20px;
-      }
-    </style>
 </head>
 <body>
   <section id="userList">
     <div class="container">
-      <div class="progect-add">
-        <li 
-            class="btn btn-primary btn-sm"  
-            data-toggle="modal" 
-            data-target="#setProject">
-            创建项目
-          </li>
+      <div class="nav">
+        <div 
+          class="btn btn-primary btn"  
+          data-toggle="modal" 
+          data-target="#setProject"
+          style="margin-top: 8px">
+          <span class="glyphicon glyphicon-plus"></span>
+          创建项目
+        </div>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入搜索内容">
+            <li class="btn btn-primary btn-sm">
+              <span class="glyphicon glyphicon-search"></span>
+              查询
+            </li>
+          </div>
+        </form>
       </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>#</th>
+            <th>序号</th>
             <th>项目</th>
             <th>业主</th>
             <th>家装设计师</th>
