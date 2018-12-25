@@ -18,6 +18,38 @@
 		    overflow: hidden;
 		    border: none;
 			}
+			.container-fluid>.navbar-header {
+				height: 56px;
+				line-height: 56px;
+			}
+			.login {
+		    line-height: 50px;
+		    color: #000;
+		    margin-right: 30px;
+			}
+			.username {
+				margin-left: 8px;
+			}
+			.unlogin {
+				margin-right: 40px;
+			}
+			.navbar-right {
+			  margin-right: 0px;
+			}
+			.glyphicon.glyphicon-log-out {
+				margin-right: 10px;
+			}
+			.navbar.navbar-default {
+			  background: #fff;
+			  margin-bottom: 0;
+			}
+			.logoimg{
+			    width: 40px;
+			    float: left;
+			    line-height: 56px;
+			    margin-left: 30px;
+			    margin-top: 8px;
+			}
 		</style>
 </head>
 <body>
@@ -25,15 +57,33 @@
 		<iframe src="slider.html" frameborder="0" width="100%" height="100%">
     </iframe>
 	</div>
+	<!-- 导航栏 -->
 	<div class="col-9 col-md-10 col-sm-9" id="item">
-		<iframe src="header-nav.html" width="100%" height="62px" style="border: none">
-		</iframe>
-		<iframe 
-			id="changeItem"
-			src="child/base_set.html" 
-			width="100%" height="100%" 
-			style="border: none">
-		</iframe>
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	    	<img src="img/logo.jpg" class="logoimg">
+	      <a class="navbar-brand">森尚宅配全屋定制流程控制系统</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<li class="login">
+	    		<span class="glyphicon glyphicon-user"></span>
+	    		<span class="username">颜良</span>
+	    	</li>
+	      <li class="unlogin">
+	      	<a href="login.html">
+	      		<span class="glyphicon glyphicon-log-out"></span> 退出
+	      	</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<iframe 
+		id="changeItem"
+		src="child/base_set.html" 
+		width="100%" height="100%" 
+		style="border: none">
+	</iframe>
 	</div>
 </body>
 </html>
