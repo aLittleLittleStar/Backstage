@@ -1,0 +1,30 @@
+/*
+* @Author: Star
+* @Date:   2018-12-25 16:42:17
+* @Last Modified by:   Star
+* @Last Modified time: 2018-12-25 16:42:59
+*/
+body{
+  background: url("../img/login.jpg") no-repeat;
+  background-size: cover;
+}
+.form{
+	background: rgba(255,255,255,0.2);
+	width:400px;
+	margin:120px auto;
+}
+/*阴影*/
+.fa{
+	display: inline-block;
+	top: 27px;
+	left: 6px;
+	position: relative;
+	color: #ccc;
+}
+input[type="text"],
+input[type="password"] {
+	padding-left:26px;
+}
+.checkbox{
+	padding-left:21px;
+}
