@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backstage\child\cabinet_body.aspx" />
+    <Content Include="Backstage\child\contract_confirm.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,7 +75,6 @@
   <ItemGroup>
     <Content Include="Backstage\ajax.html" />
     <Content Include="Backstage\child\cabinet_body.html" />
-    <Content Include="Backstage\child\contract_confirm.html" />
     <Content Include="Backstage\child\hardware_accessories.html" />
     <Content Include="Backstage\child\remarks.html" />
     <Content Include="Backstage\child\remove_door.html" />
@@ -119,6 +119,13 @@
     <Compile Include="Backstage\child\cabinet_body.aspx.designer.cs">
       <DependentUpon>cabinet_body.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backstage\child\contract_confirm.aspx.cs">
+      <DependentUpon>contract_confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\contract_confirm.aspx.designer.cs">
+      <DependentUpon>contract_confirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backstage\child\water_settings.aspx.cs">
       <DependentUpon>water_settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,7 +133,8 @@
     <Compile Include="Backstage\child\water_settings.aspx.designer.cs">
       <DependentUpon>water_settings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Backstage\MySqlCmd\MySqlCmd.cs" />
+    <Compile Include="Backstage\MySql_utils\Database.cs" />
+    <Compile Include="Backstage\MySql_utils\MySqlCmd.cs" />
     <Compile Include="Backstage\utils\PageSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

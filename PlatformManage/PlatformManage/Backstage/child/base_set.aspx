@@ -28,7 +28,7 @@
                 <div class="navbar-form navbar-right" role="search">
                   <div class="form-group">
                     <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入项目名或业主" runat="server"/>
-                    <asp:Button ID="SearchButton" Text="查询" CssClass="glyphicon glyphicon-plus" runat="server" OnClick="SearchButton_Click"/>
+                    <asp:Button ID="SearchButton" Text="查询" CssClass="btn btn-primary btn-sm glyphicon glyphicon-search" runat="server" OnClick="SearchButton_Click"/>
                   </div>
                 </div>
               </div>
