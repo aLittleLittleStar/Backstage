@@ -9,6 +9,7 @@ using System.Web.Configuration;
 using MySql.Data.MySqlClient;
 using System.Data;
 using PlatformManage.Backstage.MySql_utils;
+using PlatformManage.Backstage.utils;
 
 namespace PlatformManage.Backstage.child {
     public partial class water_settings : System.Web.UI.Page {
@@ -20,42 +21,25 @@ namespace PlatformManage.Backstage.child {
 
         private static DataTable g_dt = null;
         private string[] water_settings_column = { "序号", "项目", "业主", "初测", "水电" };
-        private void Fill_Form(MySqlDataAdapter adapter) {
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "order_form");
-
-            DataTable dt = ds.Tables["order_form"];
-            DataTable view_dt = new DataTable();
-
-            for (int i = 0; i < water_settings_column.Length; i++) {
-                view_dt.Columns.Add(water_settings_column[i]);
-            }
-
-            DataRow new_row = null;
-            foreach(DataRow row in dt.Rows) {
-                new_row = view_dt.NewRow();
-                for(int i = 0; i < water_settings_column.Length; i++) {
-                    new_row[i] = row[water_settings_column[i]];
-                }
-                view_dt.Rows.Add(new_row);
-            }
-
-            g_dt = view_dt;
-            this.GridView1.DataSource = view_dt;
-            this.GridView1.DataBind();
-        }
-
         protected void FilledCurrentDataGrid() {
-            MySqlConnection conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
             string select_string = "SELECT * FROM ORDER_FORM";
-            MySqlCmd.SetMySqlDataAdapter(select_string, conn, Fill_Form);
+            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
+            adapter.grid_view = this.GridView1;
+            adapter.columns = water_settings_column;
+            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
+                                            select_string, ref adapter);
+            g_dt = adapter.data_table;
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
-            MySqlConnection conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
             string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
                                    search_string + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string + "\"";
-            MySqlCmd.SetMySqlDataAdapter(select_string, conn, Fill_Form);
+            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
+            adapter.grid_view = this.GridView1;
+            adapter.columns = water_settings_column;
+            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
+                                            select_string, ref adapter);
+            g_dt = adapter.data_table;
         }
 
         private static int page_count = 0;

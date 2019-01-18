@@ -12,7 +12,8 @@ namespace PlatformManage.Backstage.MySql_utils {
             { "wooden_style_designer", "木作设计师" },
             { "first_test_time", "初测" },
             { "water_electric_time", "水电" },
-            { "contract_comment", "备注" }
+            { "contract_comment", "备注" },
+            { "other_cabinet", "其他柜体" },
         };
 
         /// <summary>

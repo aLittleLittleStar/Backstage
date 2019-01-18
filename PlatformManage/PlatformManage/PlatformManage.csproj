@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backstage\ajax.html" />
-    <Content Include="Backstage\child\cabinet_body.html" />
     <Content Include="Backstage\child\hardware_accessories.html" />
     <Content Include="Backstage\child\remarks.html" />
     <Content Include="Backstage\child\remove_door.html" />
@@ -135,6 +134,7 @@
     </Compile>
     <Compile Include="Backstage\MySql_utils\Database.cs" />
     <Compile Include="Backstage\MySql_utils\MySqlCmd.cs" />
+    <Compile Include="Backstage\utils\FormFillTools.cs" />
     <Compile Include="Backstage\utils\PageSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
