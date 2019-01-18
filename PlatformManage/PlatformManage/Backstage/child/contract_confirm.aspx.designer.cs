@@ -10,7 +10,7 @@
 namespace PlatformManage.Backstage.child {
     
     
-    public partial class water_settings {
+    public partial class contract_confirm {
         
         /// <summary>
         /// search_text control.
@@ -103,22 +103,13 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
         
         /// <summary>
-        /// first_test_time control.
+        /// contract_comment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText first_test_time;
-        
-        /// <summary>
-        /// water_electric_time control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText water_electric_time;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText contract_comment;
         
         /// <summary>
         /// SubmitButton control.

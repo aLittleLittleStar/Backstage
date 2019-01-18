@@ -5,7 +5,7 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 
-namespace PlatformManage.Backstage.MySqlCmd {
+namespace PlatformManage.Backstage.MySql_utils {
     public enum MySqlRequest {
         INSERT = 0x0001,
         DELETE = 0x0010,

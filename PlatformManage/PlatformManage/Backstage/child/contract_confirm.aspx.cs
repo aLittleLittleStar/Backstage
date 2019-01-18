@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.HtmlControls;
-using System.Web.Configuration;
 using MySql.Data.MySqlClient;
 using System.Data;
 using PlatformManage.Backstage.MySql_utils;
+using PlatformManage.Backstage.utils;
+using System.Web.Configuration;
 
 namespace PlatformManage.Backstage.child {
-    public partial class water_settings : System.Web.UI.Page {
+    public partial class contract_confirm : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 FilledCurrentDataGrid();
@@ -19,7 +19,7 @@ namespace PlatformManage.Backstage.child {
         }
 
         private static DataTable g_dt = null;
-        private string[] water_settings_column = { "序号", "项目", "业主", "初测", "水电" };
+        private string[] contract_column = { "序号", "项目", "业主", "备注" };
         private void Fill_Form(MySqlDataAdapter adapter) {
             DataSet ds = new DataSet();
             adapter.Fill(ds, "order_form");
@@ -27,15 +27,15 @@ namespace PlatformManage.Backstage.child {
             DataTable dt = ds.Tables["order_form"];
             DataTable view_dt = new DataTable();
 
-            for (int i = 0; i < water_settings_column.Length; i++) {
-                view_dt.Columns.Add(water_settings_column[i]);
+            for (int i = 0; i < contract_column.Length; i++) {
+                view_dt.Columns.Add(contract_column[i]);
             }
 
             DataRow new_row = null;
-            foreach(DataRow row in dt.Rows) {
+            foreach (DataRow row in dt.Rows) {
                 new_row = view_dt.NewRow();
-                for(int i = 0; i < water_settings_column.Length; i++) {
-                    new_row[i] = row[water_settings_column[i]];
+                for (int i = 0; i < contract_column.Length; i++) {
+                    new_row[i] = row[contract_column[i]];
                 }
                 view_dt.Rows.Add(new_row);
             }
@@ -70,9 +70,8 @@ namespace PlatformManage.Backstage.child {
         }
 
         private void create_cmd(ref MySqlCmd.MySqlContext udata) {
-            udata.context = "UPDATE ORDER_FORM SET `" + Database.convert_columns_name(this.first_test_time.ID)
-                            + "`=\"" + this.first_test_time.Value + "\", `" + Database.convert_columns_name(this.water_electric_time.ID)
-                            + "`=\"" + this.water_electric_time.Value + "\" WHERE `序号`=\"" + this.number.Value + "\"";
+            udata.context = "UPDATE ORDER_FORM SET `" + Database.convert_columns_name(this.contract_comment.ID)
+                            + "`=\"" + this.contract_comment.Value + "\" WHERE `序号`=\"" + this.number.Value + "\"";
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
@@ -84,7 +83,7 @@ namespace PlatformManage.Backstage.child {
             MySqlCmd.SetMySqlCommand(ref input_udata);
             FilledCurrentDataGrid();
         }
-        
+
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e) {
             ClientScript.RegisterStartupScript(this.Page.GetType(), "", "<script>document.getElementById(\"ShowButton\").click()</script>");
 
@@ -92,8 +91,7 @@ namespace PlatformManage.Backstage.child {
             this.number.Value = g_dt.Rows[count].ItemArray[0].ToString();
             this.item.Value = g_dt.Rows[count].ItemArray[1].ToString();
             this.owner.Value = g_dt.Rows[count].ItemArray[2].ToString();
-            this.first_test_time.Value = g_dt.Rows[count].ItemArray[3].ToString();
-            this.water_electric_time.Value = g_dt.Rows[count].ItemArray[4].ToString();
+            this.contract_comment.Value = g_dt.Rows[count].ItemArray[3].ToString();
         }
     }
 }
