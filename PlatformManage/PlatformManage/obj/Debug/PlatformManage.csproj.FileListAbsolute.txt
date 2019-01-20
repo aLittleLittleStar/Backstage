@@ -22,3 +22,11 @@ D:\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.csproj.CoreC
 D:\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.csproj.CopyComplete
 D:\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.dll
 D:\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.pdb
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.dll.config
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.dll
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.pdb
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.csprojAssemblyReference.cache
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.csproj.CoreCompileInputs.cache
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.csproj.CopyComplete
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.dll
+C:\Users\29176\Desktop\网站项目\Backstage\PlatformManage\PlatformManage\obj\Debug\PlatformManage.pdb
