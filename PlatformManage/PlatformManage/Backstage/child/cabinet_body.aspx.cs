@@ -72,8 +72,8 @@ namespace PlatformManage.Backstage.child {
 
             int count = e.NewSelectedIndex + 7 * page_count;
             this.number.Value = g_dt.Rows[count].ItemArray[0].ToString();
-            this.item.Value = g_dt.Rows[count].ItemArray[1].ToString();
-            this.owner.Value = g_dt.Rows[count].ItemArray[2].ToString();
+            this.confirm_number.Value = g_dt.Rows[count].ItemArray[1].ToString();
+            this.item.Value = g_dt.Rows[count].ItemArray[2].ToString();
             this.other_cabinet.Value = g_dt.Rows[count].ItemArray[3].ToString();
         }
     }

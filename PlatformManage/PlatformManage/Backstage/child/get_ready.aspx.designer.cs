@@ -10,7 +10,16 @@
 namespace PlatformManage.Backstage.child {
     
     
-    public partial class cabinet_body {
+    public partial class get_ready {
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// search_text control.
@@ -103,13 +112,31 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText item;
         
         /// <summary>
-        /// other_cabinet control.
+        /// owner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText other_cabinet;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        
+        /// <summary>
+        /// waterchannel_wiring control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText waterchannel_wiring;
+        
+        /// <summary>
+        /// hardware_fitting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText hardware_fitting;
         
         /// <summary>
         /// SubmitButton control.

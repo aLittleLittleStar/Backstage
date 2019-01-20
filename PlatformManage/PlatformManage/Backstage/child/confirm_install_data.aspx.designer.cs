@@ -10,7 +10,7 @@
 namespace PlatformManage.Backstage.child {
     
     
-    public partial class cabinet_body {
+    public partial class confirm_install_data {
         
         /// <summary>
         /// search_text control.
@@ -103,13 +103,22 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText item;
         
         /// <summary>
-        /// other_cabinet control.
+        /// owner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText other_cabinet;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        
+        /// <summary>
+        /// reserve_time control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText reserve_time;
         
         /// <summary>
         /// SubmitButton control.

@@ -1,14 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cabinet_body.aspx.cs" Inherits="PlatformManage.Backstage.child.cabinet_body" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="confirm_install_data.aspx.cs" Inherits="PlatformManage.Backstage.child.confirm_install_data" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8" />
-    <title>其他柜体</title>
+    <title>预定安装时间</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../js/jqPaginator.js"></script>
     <link rel="stylesheet" href="../css/item.css" />
 </head>
@@ -58,7 +60,7 @@
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">合同编号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="confirm_number" name="confirm_number" value="" disabled runat="server" />
+                                <input type="text" class="form-control" id="confirm_number" name="confirm_number" disabled runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -68,9 +70,29 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="firstname" class="col-sm-2 control-label">其他柜体</label>
+                            <label for="firstname" class="col-sm-2 control-label">业主</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="other_cabinet" name="other_cabinet" placeholder="其他柜体" runat="server" />
+                                <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" class="col-sm-2 control-label">预定安装时间</label>
+                            <div class="col-sm-10">
+                                <fieldset>
+                                    <div
+                                        class="input-group date form_datetime"
+                                        data-date="2018-09-16T"
+                                        data-link-field="dtp_input1">
+                                        <input id="reserve_time" name="reserve_time" class="form-control" size="16" type="text" value="" readonly runat="server" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </span>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value="" /><br />
+                                </fieldset>
                             </div>
                         </div>
                     </div>
@@ -81,45 +103,58 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            function loadData(num) {
-                $("#PageCount").val("89");
-            }
-
-
-
-            function exeData(num, type) {
-                loadData(num);
-                loadpage();
-            }
-            function loadpage() {
-                var myPageCount = parseInt($("#PageCount").val());
-                var myPageSize = parseInt($("#PageSize").val());
-                var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
-                $("#countindex").val(countindex);
-
-                $.jqPaginator('#pagination', {
-                    totalPages: parseInt($("#countindex").val()),
-                    visiblePages: parseInt($("#visiblePages").val()),
-                    currentPage: 1,
-                    first: '<li class="first"><a href="javascript:;">首页</a></li>',
-                    prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
-                    next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
-                    last: '<li class="last"><a href="javascript:;">末页</a></li>',
-                    page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
-                    onPageChange: function (num, type) {
-                        if (type == "change") {
-                            exeData(num, type);
-                        }
-                    }
-                });
-            }
-            $(function () {
-                loadData(1);
-                loadpage();
-            });
-        </script>
     </form>
 </body>
+<script>
+    $('.form_datetime').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1,
+        minView: "month",
+        format: 'yyyy-mm-dd',
+    });
+
+
+    function loadData(num) {
+        $("#PageCount").val("89");
+    }
+
+
+
+    function exeData(num, type) {
+        loadData(num);
+        loadpage();
+    }
+    function loadpage() {
+        var myPageCount = parseInt($("#PageCount").val());
+        var myPageSize = parseInt($("#PageSize").val());
+        var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
+        $("#countindex").val(countindex);
+
+        $.jqPaginator('#pagination', {
+            totalPages: parseInt($("#countindex").val()),
+            visiblePages: parseInt($("#visiblePages").val()),
+            currentPage: 1,
+            first: '<li class="first"><a href="javascript:;">首页</a></li>',
+            prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
+            next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
+            last: '<li class="last"><a href="javascript:;">末页</a></li>',
+            page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+            onPageChange: function (num, type) {
+                if (type == "change") {
+                    exeData(num, type);
+                }
+            }
+        });
+    }
+    $(function () {
+        loadData(1);
+        loadpage();
+    });
+</script>
 </html>
