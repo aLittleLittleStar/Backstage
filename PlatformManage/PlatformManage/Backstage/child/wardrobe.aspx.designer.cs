@@ -10,7 +10,16 @@
 namespace PlatformManage.Backstage.child {
     
     
-    public partial class cabinet_body {
+    public partial class wardrobe {
+        
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// search_text control.
@@ -85,15 +94,6 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText number;
         
         /// <summary>
-        /// confirm_number control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText confirm_number;
-        
-        /// <summary>
         /// item control.
         /// </summary>
         /// <remarks>
@@ -103,13 +103,31 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText item;
         
         /// <summary>
-        /// other_cabinet control.
+        /// owner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText other_cabinet;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        
+        /// <summary>
+        /// clothes_board_reserve_time control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText clothes_board_reserve_time;
+        
+        /// <summary>
+        /// clothes_board_order_time control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText clothes_board_order_time;
         
         /// <summary>
         /// SubmitButton control.

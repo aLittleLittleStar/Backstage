@@ -19,43 +19,26 @@ namespace PlatformManage.Backstage.child {
         }
 
         private static DataTable g_dt = null;
-        private string[] contract_column = { "序号", "项目", "业主", "备注" };
-        private void Fill_Form(MySqlDataAdapter adapter) {
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "order_form");
-
-            DataTable dt = ds.Tables["order_form"];
-            DataTable view_dt = new DataTable();
-
-            for (int i = 0; i < contract_column.Length; i++) {
-                view_dt.Columns.Add(contract_column[i]);
-            }
-
-            DataRow new_row = null;
-            foreach (DataRow row in dt.Rows) {
-                new_row = view_dt.NewRow();
-                for (int i = 0; i < contract_column.Length; i++) {
-                    new_row[i] = row[contract_column[i]];
-                }
-                view_dt.Rows.Add(new_row);
-            }
-
-            g_dt = view_dt;
-            this.GridView1.DataSource = view_dt;
-            this.GridView1.DataBind();
-        }
-
+        private string[] contract_column = { "序号", "合同编号", "项目", "业主", "合同确认" };
         protected void FilledCurrentDataGrid() {
-            MySqlConnection conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
             string select_string = "SELECT * FROM ORDER_FORM";
-            MySqlCmd.SetMySqlDataAdapter(select_string, conn, Fill_Form);
+            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
+            adapter.grid_view = this.GridView1;
+            adapter.columns = contract_column;
+            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
+                                            select_string, ref adapter);
+            g_dt = adapter.data_table;
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
-            MySqlConnection conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
             string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
                                    search_string + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string + "\"";
-            MySqlCmd.SetMySqlDataAdapter(select_string, conn, Fill_Form);
+            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
+            adapter.grid_view = this.GridView1;
+            adapter.columns = contract_column;
+            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
+                                            select_string, ref adapter);
+            g_dt = adapter.data_table;
         }
 
         private static int page_count = 0;
@@ -69,9 +52,21 @@ namespace PlatformManage.Backstage.child {
             FilledCurrentDataGrid(this.search_text.Value.ToString());
         }
 
+        /// <summary>
+        /// 自动生成项目编号
+        /// </summary>
+        /// <param name="number">项目序号</param>
+        /// <returns></returns>
+        private string create_contract_code(string number) {
+            return "YS-" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + "-" + number;
+        }
+
         private void create_cmd(ref MySqlCmd.MySqlContext udata) {
-            udata.context = "UPDATE ORDER_FORM SET `" + Database.convert_columns_name(this.contract_comment.ID)
-                            + "`=\"" + this.contract_comment.Value + "\" WHERE `序号`=\"" + this.number.Value + "\"";
+            udata.context = "UPDATE ORDER_FORM SET `合同编号`=\"" + create_contract_code(this.number.Value)
+                            + "\", `" + Database.convert_columns_name(this.contract_comment.ID)
+                            + "`=\"" + this.contract_comment.Value
+                            + "\", `合同确定时间`=\""
+                            + DateTime.Now + "\" WHERE `序号`=\"" + this.number.Value + "\"";
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
@@ -89,9 +84,9 @@ namespace PlatformManage.Backstage.child {
 
             int count = e.NewSelectedIndex + 7 * page_count;
             this.number.Value = g_dt.Rows[count].ItemArray[0].ToString();
-            this.item.Value = g_dt.Rows[count].ItemArray[1].ToString();
-            this.owner.Value = g_dt.Rows[count].ItemArray[2].ToString();
-            this.contract_comment.Value = g_dt.Rows[count].ItemArray[3].ToString();
+            this.item.Value = g_dt.Rows[count].ItemArray[2].ToString();
+            this.owner.Value = g_dt.Rows[count].ItemArray[3].ToString();
+            this.contract_comment.Value = g_dt.Rows[count].ItemArray[4].ToString();
         }
     }
 }

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Web.UI.WebControls;
 
 namespace PlatformManage.Backstage.MySql_utils {
     public enum MySqlRequest {
@@ -14,7 +16,7 @@ namespace PlatformManage.Backstage.MySql_utils {
     }
 
     public class MySqlCmd {
-        public delegate void AdapterCallBack(MySqlDataAdapter adapter);
+        public delegate void AdapterCallBack(ref MySqlAdapter adapter);
         public delegate void ExecutedCallBack(MySqlContext udata);
         public delegate void CreateCommand(ref MySqlContext udata);
 
@@ -28,6 +30,13 @@ namespace PlatformManage.Backstage.MySql_utils {
             public string context;                     // 用户请求的command命令描述
             public int res;                            // 数据库执行操作返回值
             public CreateCommand create_cmd;           // 用户自定义数据库命令创建方法
+        }
+
+        public struct MySqlAdapter {
+            public MySqlDataAdapter adapter;           // 用户数据库适配器
+            public GridView grid_view;                 // 用户使用GridView控件
+            public string[] columns;                   // 用户数据库列名
+            public DataTable data_table;                      // 返回一个新的DataTable
         }
 
         /// <summary>
@@ -46,10 +55,11 @@ namespace PlatformManage.Backstage.MySql_utils {
         /// <param name="cmd_str">数据库命令字符串</param>
         /// <param name="conn">连接的数据库对象</param>
         /// <param name="callback">用户自定义方法</param>
-        public static void SetMySqlDataAdapter(string cmd_str, MySqlConnection conn, AdapterCallBack callback) {
+        public static void SetMySqlDataAdapter(string cmd_str, MySqlConnection conn, ref MySqlAdapter uadapter, AdapterCallBack callback) {
             lock (conn) {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd_str, conn);
-                callback(adapter);
+                uadapter.adapter = adapter;
+                callback(ref uadapter);
             }
         }
 

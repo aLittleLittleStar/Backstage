@@ -63,7 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backstage\child\cabinet_body.aspx" />
+    <Content Include="Backstage\child\confirm_install_data.aspx" />
     <Content Include="Backstage\child\contract_confirm.aspx" />
+    <Content Include="Backstage\child\cupboard.aspx" />
+    <Content Include="Backstage\child\get_ready.aspx" />
+    <Content Include="Backstage\child\install_detail.aspx" />
+    <Content Include="Backstage\child\search.aspx" />
+    <Content Include="Backstage\child\user_list.aspx" />
+    <Content Include="Backstage\child\wardrobe.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,11 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backstage\ajax.html" />
-    <Content Include="Backstage\child\cabinet_body.html" />
-    <Content Include="Backstage\child\hardware_accessories.html" />
-    <Content Include="Backstage\child\remarks.html" />
-    <Content Include="Backstage\child\remove_door.html" />
-    <Content Include="Backstage\child\sink_appliance.html" />
     <Content Include="Backstage\copty.html" />
     <Content Include="Backstage\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Backstage\css\bootstrap.min.css" />
@@ -119,12 +121,61 @@
     <Compile Include="Backstage\child\cabinet_body.aspx.designer.cs">
       <DependentUpon>cabinet_body.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backstage\child\confirm_install_data.aspx.cs">
+      <DependentUpon>confirm_install_data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\confirm_install_data.aspx.designer.cs">
+      <DependentUpon>confirm_install_data.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backstage\child\contract_confirm.aspx.cs">
       <DependentUpon>contract_confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Backstage\child\contract_confirm.aspx.designer.cs">
       <DependentUpon>contract_confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\cupboard.aspx.cs">
+      <DependentUpon>cupboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\cupboard.aspx.designer.cs">
+      <DependentUpon>cupboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\get_ready.aspx.cs">
+      <DependentUpon>get_ready.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\get_ready.aspx.designer.cs">
+      <DependentUpon>get_ready.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\install_detail.aspx.cs">
+      <DependentUpon>install_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\install_detail.aspx.designer.cs">
+      <DependentUpon>install_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\user_list.aspx.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\user_list.aspx.designer.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\wardrobe.aspx.cs">
+      <DependentUpon>wardrobe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\wardrobe.aspx.designer.cs">
+      <DependentUpon>wardrobe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backstage\child\water_settings.aspx.cs">
       <DependentUpon>water_settings.aspx</DependentUpon>
@@ -135,6 +186,7 @@
     </Compile>
     <Compile Include="Backstage\MySql_utils\Database.cs" />
     <Compile Include="Backstage\MySql_utils\MySqlCmd.cs" />
+    <Compile Include="Backstage\utils\FormFillTools.cs" />
     <Compile Include="Backstage\utils\PageSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
