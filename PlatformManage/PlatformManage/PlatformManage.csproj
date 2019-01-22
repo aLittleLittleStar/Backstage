@@ -69,7 +69,6 @@
     <Content Include="Backstage\child\get_ready.aspx" />
     <Content Include="Backstage\child\install_detail.aspx" />
     <Content Include="Backstage\child\search.aspx" />
-    <Content Include="Backstage\child\user_list.aspx" />
     <Content Include="Backstage\child\wardrobe.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <None Include="Web.Debug.config">
@@ -162,13 +161,6 @@
     </Compile>
     <Compile Include="Backstage\child\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Backstage\child\user_list.aspx.cs">
-      <DependentUpon>user_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Backstage\child\user_list.aspx.designer.cs">
-      <DependentUpon>user_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backstage\child\wardrobe.aspx.cs">
       <DependentUpon>wardrobe.aspx</DependentUpon>
