@@ -20,14 +20,13 @@ USE `yiju_database`;
 CREATE TABLE IF NOT EXISTS `manager` (
   `账号` varchar(10) NOT NULL,
   `密码` varchar(15) NOT NULL,
-  `项目` varchar(50) NOT NULL,
-  PRIMARY KEY (`项目`)
+  ` Identity` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.manager 的数据：~1 rows (大约)
+-- 正在导出表  yiju_database.manager 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `manager` DISABLE KEYS */;
-INSERT INTO `manager` (`账号`, `密码`, `项目`) VALUES
-	('admin', 'admin', '西航外招');
+INSERT INTO `manager` (`账号`, `密码`, ` Identity`) VALUES
+	('admin_m', 'admin', '西航外招');
 /*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 
 -- 导出  表 yiju_database.order_form 结构
@@ -48,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `order_form` (
   `台面` varchar(50) DEFAULT NULL,
   `橱柜门板` varchar(50) DEFAULT NULL,
   `其他柜体` varchar(50) DEFAULT NULL,
-  `橱柜预定安装日期` varchar(50) DEFAULT NULL,
-  `衣柜预定安装日期` varchar(50) DEFAULT NULL,
+  `橱柜预定安装日期` date DEFAULT NULL,
+  `衣柜预定安装日期` date DEFAULT NULL,
   `水槽、电器` varchar(50) DEFAULT NULL,
   `五金配件` varchar(50) DEFAULT NULL,
   `实际安装时间` date DEFAULT NULL,
@@ -88,28 +87,28 @@ INSERT INTO `order_form` (`序号`, `合同编号`, `项目`, `业主`, `家装�
 -- 导出  表 yiju_database.root_manager 结构
 CREATE TABLE IF NOT EXISTS `root_manager` (
   `账号` varchar(10) NOT NULL,
-  `密码` varchar(15) NOT NULL
+  `密码` varchar(15) NOT NULL,
+  `Identity` varchar(4) NOT NULL DEFAULT 'root'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 正在导出表  yiju_database.root_manager 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `root_manager` DISABLE KEYS */;
-INSERT INTO `root_manager` (`账号`, `密码`) VALUES
-	('admin', 'admin');
+INSERT INTO `root_manager` (`账号`, `密码`, `Identity`) VALUES
+	('admin_rm', 'admin', 'root');
 /*!40000 ALTER TABLE `root_manager` ENABLE KEYS */;
 
--- 导出  表 yiju_database.user 结构
-CREATE TABLE IF NOT EXISTS `user` (
+-- 导出  表 yiju_database.user_form 结构
+CREATE TABLE IF NOT EXISTS `user_form` (
   `账号` varchar(10) NOT NULL,
   `密码` varchar(15) NOT NULL,
-  `业主` varchar(10) NOT NULL,
-  PRIMARY KEY (`业主`)
+  `Identity` varchar(10) NOT NULL DEFAULT '业主'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.user 的数据：~1 rows (大约)
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`账号`, `密码`, `业主`) VALUES
-	('admin', 'admin', '张三');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+-- 正在导出表  yiju_database.user_form 的数据：~0 rows (大约)
+/*!40000 ALTER TABLE `user_form` DISABLE KEYS */;
+INSERT INTO `user_form` (`账号`, `密码`, `Identity`) VALUES
+	('admin_u', 'admin', '业主');
+/*!40000 ALTER TABLE `user_form` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

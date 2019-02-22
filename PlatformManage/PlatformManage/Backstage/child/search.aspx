@@ -9,13 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    <style>
-        #search {
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/modify-child.css" />
 </head>
 <body>
     <form id="form1" runat="server">

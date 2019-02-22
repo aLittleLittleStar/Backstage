@@ -11,8 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script src="../js/bootstrap-datetimepicker.min.js"></script>
     <script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script src="../js/jqPaginator.js"></script>
-    <link rel="stylesheet" href="../css/item.css" />
+    <link rel="stylesheet" href="../css/confirm_install_data.css" />
+    <link rel="stylesheet" href="../css/modify-child.css" / >
+        <style>
+        .modal-content .modal-body .form-group:nth-child(5) label {
+            padding-top: 0px;
+        }
+        .modal-content .modal-body .form-group:nth-child(6) label {
+            padding-top: 0px;
+        }
+        .modal-content .modal-body .form-group:nth-child(7) {
+            padding-top: 7px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -61,11 +72,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                                <label for="firstname" class="col-sm-2 control-label">序号</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server" />
-                                </div>
+                            <label for="firstname" class="col-sm-2 control-label">序号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server" />
                             </div>
+                       </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">合同编号</label>
                             <div class="col-sm-10">
@@ -92,7 +103,15 @@
                                         class="input-group date form_datetime"
                                         data-date="2018-09-16T"
                                         data-link-field="dtp_input1">
-                                        <input class="form-control" size="16" type="text" id="real_install_time" name="real_install_time" value="" readonly runat="server"/>
+                                        <input 
+                                            class="form-control" 
+                                            size="16" 
+                                            type="text" 
+                                            id="real_install_time" 
+                                            name="real_install_time" 
+                                            value="" 
+                                            readonly="" 
+                                            runat="server"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </span>
@@ -116,7 +135,6 @@
                                 <input type="text" class="form-control" id="comment" name="comment" placeholder="备注" runat="server"/>
                             </div>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -126,56 +144,19 @@
             </div>
         </div>
     </form>
+        <script>
+        	$('.form_datetime').datetimepicker({
+  	                language:  'zh-CN',
+  	                weekStart: 1,
+  	                todayBtn:  1,
+		            autoclose: 1,
+		            todayHighlight: 1,
+		            startView: 2,
+		            forceParse: 0,
+  	                showMeridian: 1,
+  	                minView: "month",
+  	                format : 'yyyy-mm-dd',
+            });
+    </script>
 </body>
-<script>
-    $('.form_datetime').datetimepicker({
-        language: 'zh-CN',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        forceParse: 0,
-        showMeridian: 1,
-        minView: "month",
-        format: 'yyyy-mm-dd',
-    });
-
-    function loadData(num) {
-        $("#PageCount").val("89");
-    }
-
-
-
-    function exeData(num, type) {
-        loadData(num);
-        loadpage();
-    }
-    function loadpage() {
-        var myPageCount = parseInt($("#PageCount").val());
-        var myPageSize = parseInt($("#PageSize").val());
-        var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
-        $("#countindex").val(countindex);
-
-        $.jqPaginator('#pagination', {
-            totalPages: parseInt($("#countindex").val()),
-            visiblePages: parseInt($("#visiblePages").val()),
-            currentPage: 1,
-            first: '<li class="first"><a href="javascript:;">首页</a></li>',
-            prev: '<li class="prev"><a href="javascript:;"><i class="arrow arrow2"></i>上一页</a></li>',
-            next: '<li class="next"><a href="javascript:;">下一页<i class="arrow arrow3"></i></a></li>',
-            last: '<li class="last"><a href="javascript:;">末页</a></li>',
-            page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
-            onPageChange: function (num, type) {
-                if (type == "change") {
-                    exeData(num, type);
-                }
-            }
-        });
-    }
-    $(function () {
-        loadData(1);
-        loadpage();
-    });
-</script>
 </html>
