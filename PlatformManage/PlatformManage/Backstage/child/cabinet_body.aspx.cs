@@ -43,8 +43,20 @@ namespace PlatformManage.Backstage.child {
 
         private static int page_count = 0;
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e) {
-            this.GridView1.PageIndex = e.NewPageIndex;
-            page_count = e.NewPageIndex;
+            if (e.NewPageIndex == -2) {
+                TextBox txtBox = this.GridView1.BottomPagerRow.FindControl("txtNewPageIndex") as TextBox;
+                int txtPageIndex = Math.Abs(int.Parse(txtBox.Text.Trim()));
+                if (txtPageIndex > 0) {
+                    this.GridView1.PageIndex = txtPageIndex - 1;
+                }
+                else {
+                    this.GridView1.PageIndex = 0;
+                }
+            }
+            else {
+                this.GridView1.PageIndex = e.NewPageIndex;
+            }
+            page_count = this.GridView1.PageIndex;
             FilledCurrentDataGrid();
         }
 

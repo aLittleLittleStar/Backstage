@@ -18,17 +18,26 @@
     <form class="form-horizontal" role="form" runat="server" method="post">
         <section id="userList">
             <div class="container">
-                    <div class="form-group">
-                        <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入项目名或业主" runat="server"/>
-                        <asp:Button ID="SearchButton" Text="查询" CssClass="btn btn-primary btn-sm glyphicon glyphicon-search" runat="server" OnClick="SearchButton_Click"/>
-                    </div>
+                <div class="form-group">
+                    <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入项目名或业主" runat="server" />
+                    <asp:Button ID="SearchButton" Text="查询" CssClass="btn btn-primary btn-sm glyphicon glyphicon-search" runat="server" OnClick="SearchButton_Click" />
+                </div>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="7" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
-                      <Columns>
-                          <asp:CommandField ButtonType="Button" HeaderText="操作" SelectText="录入信息" ShowSelectButton="True" ControlStyle-CssClass="btn btn-primary btn-sm"/>
-                      </Columns>
-                      <PagerSettings PageButtonCount="5" />
-                  </asp:GridView>
-                <button id="ShowButton" name="ShowButton" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#inputMsg" style="display:none">录入信息</button>
+                    <Columns>
+                        <asp:CommandField ButtonType="Button" HeaderText="操作" SelectText="录入信息" ShowSelectButton="True" ControlStyle-CssClass="btn btn-primary btn-sm" />
+                    </Columns>
+                    <PagerSettings PageButtonCount="5" />
+                    <PagerTemplate>
+                        <asp:Label ID="lblPage" CssClass="PagerFont" runat="server" Text='<%# "第" + (((GridView)Container.NamingContainer).PageIndex + 1)  + "页/共" + (((GridView)Container.NamingContainer).PageCount) + "页" %> '></asp:Label>
+                        <asp:LinkButton ID="lbnFirst" CssClass="PagerFont" runat="Server" Text="首页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="First"></asp:LinkButton>
+                        <asp:LinkButton ID="lbnPrev" CssClass="PagerFont" runat="server" Text="上一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="Prev"></asp:LinkButton>
+                        <asp:LinkButton ID="lbnNext" CssClass="PagerFont" runat="Server" Text="下一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Next"></asp:LinkButton>
+                        <asp:LinkButton ID="lbnLast" CssClass="PagerFont" runat="Server" Text="尾页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Last"></asp:LinkButton>
+                        <asp:TextBox ID="txtNewPageIndex" runat="server" Text="<%# ((GridView)Container.Parent.Parent).PageIndex + 1%>" Width="20px"></asp:TextBox>
+                        <asp:LinkButton ID="btnGo" runat="server" CausesValidation="False" CommandArgument="-1" CommandName="Page" Text="跳转"></asp:LinkButton>
+                    </PagerTemplate>
+                </asp:GridView>
+                <button id="ShowButton" name="ShowButton" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#inputMsg" style="display: none">录入信息</button>
             </div>
             <div class="container">
                 <ul class="pagination" id="pagination">
@@ -51,30 +60,30 @@
                         <h3 class="modal-title" id="myModalLabel">录入信息</h3>
                     </div>
                     <div class="modal-body">
-                            <div class="form-group">
-                                <label for="firstname" class="col-sm-2 control-label">序号</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server"/>
-                                </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">序号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server" />
                             </div>
-                            <div class="form-group">
-                                <label for="firstname" class="col-sm-2 control-label">项目</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="item" name="item" value="" disabled runat="server"/>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">项目</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="item" name="item" value="" disabled runat="server" />
                             </div>
-                            <div class="form-group">
-                                <label for="firstname" class="col-sm-2 control-label">业主</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server"/>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">业主</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server" />
                             </div>
-                            <div class="form-group">
-                                <label for="firstname" class="col-sm-2 control-label">合同确认</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="contract_comment" name="contract_comment" placeholder="合同确认相关事宜" runat="server"/>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">合同确认</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="contract_comment" name="contract_comment" placeholder="合同确认相关事宜" runat="server" />
                             </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
