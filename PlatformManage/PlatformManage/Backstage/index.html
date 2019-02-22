@@ -68,7 +68,7 @@
 	    <ul class="nav navbar-nav navbar-right">
 	    	<li class="login">
 	    		<span class="glyphicon glyphicon-user"></span>
-	    		<span class="username">颜良</span>
+	    		<label class="username" id="name_label"></label>
 	    	</li>
 	      <li class="unlogin">
 	      	<a href="login.html">
@@ -85,5 +85,15 @@
 		style="border: none">
 	</iframe>
 	</div>
+    <script type="text/javascript">
+        document.onload += load();
+        function load() {
+            var arr, reg = new RegExp("(^|)" + "user_data" + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg)) {
+                text = arr[2].split('=');
+                document.getElementById("name_label").innerHTML = text[1];
+            }
+        }
+    </script>
 </body>
 </html>
