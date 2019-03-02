@@ -21,7 +21,7 @@ namespace PlatformManage.Backstage.MySql_utils {
             { "clothes_board_order_time", "衣柜下单时间" },
             { "table_board", "台面" },
             { "board_door_table", "橱柜门板" },
-            { "other_cabinet", "衣柜、其他柜体" },
+            { "other_cabinet", "其他柜体" },
             { "waterchannel_wiring", "水槽、电器" },
             { "hardware_fitting", "五金配件" },
             { "real_install_time", "实际安装时间" },

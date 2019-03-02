@@ -37,35 +37,35 @@ CREATE TABLE IF NOT EXISTS `order_form` (
   `业主` varchar(50) NOT NULL,
   `家装设计师` varchar(50) DEFAULT '无',
   `木作设计师` varchar(50) DEFAULT '无',
-  `初测` date DEFAULT NULL,
-  `水电` date DEFAULT NULL,
+  `初测` varchar(50) DEFAULT NULL,
+  `水电` varchar(50) DEFAULT NULL,
   `合同确认` varchar(50) DEFAULT NULL,
-  `合同确定时间` date DEFAULT NULL,
-  `预定安装日期` date DEFAULT NULL,
-  `橱柜下单时间` date DEFAULT NULL,
-  `衣柜下单时间` date DEFAULT NULL,
+  `合同确定时间` varchar(50) DEFAULT NULL,
+  `预定安装日期` varchar(50) DEFAULT NULL,
+  `橱柜下单时间` varchar(50) DEFAULT NULL,
+  `衣柜下单时间` varchar(50) DEFAULT NULL,
   `台面` varchar(50) DEFAULT NULL,
   `橱柜门板` varchar(50) DEFAULT NULL,
   `其他柜体` varchar(50) DEFAULT NULL,
-  `橱柜预定安装日期` date DEFAULT NULL,
-  `衣柜预定安装日期` date DEFAULT NULL,
+  `橱柜预定安装日期` varchar(50) DEFAULT NULL,
+  `衣柜预定安装日期` varchar(50) DEFAULT NULL,
   `水槽、电器` varchar(50) DEFAULT NULL,
   `五金配件` varchar(50) DEFAULT NULL,
-  `实际安装时间` date DEFAULT NULL,
+  `实际安装时间` varchar(50) DEFAULT NULL,
   `安装遗留问题` varchar(100) DEFAULT NULL,
   `备注` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`序号`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.order_form 的数据：~22 rows (大约)
+-- 正在导出表  yiju_database.order_form 的数据：~12 rows (大约)
 /*!40000 ALTER TABLE `order_form` DISABLE KEYS */;
 INSERT INTO `order_form` (`序号`, `合同编号`, `项目`, `业主`, `家装设计师`, `木作设计师`, `初测`, `水电`, `合同确认`, `合同确定时间`, `预定安装日期`, `橱柜下单时间`, `衣柜下单时间`, `台面`, `橱柜门板`, `其他柜体`, `橱柜预定安装日期`, `衣柜预定安装日期`, `水槽、电器`, `五金配件`, `实际安装时间`, `安装遗留问题`, `备注`) VALUES
 	(1, 'YS-2019-1-20-1', 'asdf', 'ss', '', '', '2018-08-02', '2018-08-03', 'wwwwww', NULL, '2018-09-06', NULL, '2018-08-29', NULL, NULL, 'ddddddddddd', NULL, '2018-08-28', NULL, NULL, NULL, NULL, '是的'),
-	(2, 'YS-2019/1/18 0:00:00-2', 'asdfds', 'sddsf', '', '', '2018-10-03', '2018-10-04', NULL, NULL, NULL, '2018-08-29', NULL, '这是台面', '这是门板', 'sssssssssss', '2018-08-31', NULL, NULL, NULL, NULL, NULL, 'sddsf'),
-	(3, 'YS-2019-1-18-3', 'sss', 'sss', '', '', '2018-08-29', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'yews'),
+	(2, 'YS-2019/1/18 0:00:00-2', 'asdfds', 'sddsf', '', '', '2018-10-03', '2018-10-04', NULL, NULL, NULL, '2018-08-29', NULL, '这是台面', '这是门板', 'wwwwwwwwwwwwwsaf', '2018-08-31', NULL, NULL, NULL, NULL, NULL, 'sddsf'),
+	(3, 'YS-2019-2-22-3', 'sss', 'sss', '', '', '2018-08-29', '2018-08-30', 'yews', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'yews'),
 	(4, 'YS-2019-1-18-4', 'test', 'test', 'null', 'null', '2018-09-12', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '是的'),
 	(5, 'YS-osajfd_fj;lakdsj', '时空', '李三', '张四', '李五', '2018-12-16', '2019-01-12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(6, NULL, '测试', '测试', '', '', '2018-09-04', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', '2018-09-04', 'wwwwwwwwww', 'sssssssssss'),
+	(6, 'YS-2019-2-22-6', '测试', '测试', '', '', '2018-09-04', '2018-08-30', '是的', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', '2018-09-04', 'wwwwwwwwww', 'sssssssssss'),
 	(7, 'YS-osajfd_fj;lakdsj', '阎良', '张三', '张四', '李五', '2018-12-15', '2019-01-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'wwwwwwwwwwwwwwwwwww', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(8, NULL, 'for test', 'test owner', 'home', 'wooden', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(9, NULL, 'ssstest', 'ssadf', 'lay', 'dd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -76,12 +76,12 @@ INSERT INTO `order_form` (`序号`, `合同编号`, `项目`, `业主`, `家装�
 	(14, NULL, 'ss', 'ss', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(15, NULL, 'ss', 'safd', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'wwwwww', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(16, NULL, 'asdfds', 'asdf', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(17, NULL, 'sss', 'sss', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(17, 'YS-2019-2-22-17', 'sss', 'sss', '', '', NULL, NULL, '是的', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(18, NULL, 'abc', 'yes', 'di', 'di', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(19, NULL, 'asfd', 'qwreipu', 'jvam,nsdf', 'poiwer', '2018-08-29', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(20, NULL, 'ww', 'wr', 'sadf', 'dd', '2018-09-12', '2018-09-13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(21, NULL, 'we', 'are', 'hello', 'world', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(22, NULL, 'test', 'sss', 'lay', 'shiry', '2018-08-29', '2018-08-31', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', NULL, NULL, NULL);
+	(22, 'YS-2019-2-22-22', 'test', 'sss', 'lay', 'shiry', '2018-08-29', '2018-08-31', '666', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `order_form` ENABLE KEYS */;
 
 -- 导出  表 yiju_database.root_manager 结构
