@@ -23,8 +23,10 @@ namespace PlatformManage.Backstage.child {
         private string[] water_settings_column = { "序号", "项目", "业主", "初测", "水电" };
         protected void FilledCurrentDataGrid() {
             string select_string = "SELECT * FROM ORDER_FORM";
-            if (PlatformManage.User._user.Identify.Equals("业主"))
+            if (PlatformManage.User._user.Identify != null && PlatformManage.User._user.Identify.Equals("业主"))
                 select_string += " WHERE `业主`=" + "\"" + PlatformManage.User._user.User_Name + "\"";
+            else
+                return;
 
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;

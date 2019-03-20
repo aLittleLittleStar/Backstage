@@ -53,7 +53,6 @@
                 data: "uname=" + $("#username").val() + "&password=" + $("#password").val(),
                 success: function (data) {
                     if (data.msg == 1) {
-                        console.log(data.data)
                         // 对代码进行分割得到用户
                         //var saveroot = data.data.split(";")
 
@@ -66,6 +65,12 @@
                     else if (data.msg == 0) {
                         alert("请检查账号或者密码!");
                     }
+                    else {
+                        alert(data.data);
+                    }
+                },
+                error: function (ev) {
+                    console.log(ev.responseText);
                 }
             }) 
         }

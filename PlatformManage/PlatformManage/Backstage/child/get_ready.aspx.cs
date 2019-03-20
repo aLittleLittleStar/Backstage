@@ -22,8 +22,10 @@ namespace PlatformManage.Backstage.child {
         private string[] other_cabinet_column = { "序号", "合同编号", "项目", "业主", "水槽、电器", "五金配件" };
         protected void FilledCurrentDataGrid() {
             string select_string = "SELECT * FROM ORDER_FORM";
-            if (PlatformManage.User._user.Identify.Equals("业主"))
+            if (PlatformManage.User._user.Identify != null && PlatformManage.User._user.Identify.Equals("业主"))
                 select_string += " WHERE `业主`=" + "\"" + PlatformManage.User._user.User_Name + "\"";
+            else
+                return;
 
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
