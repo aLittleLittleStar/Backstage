@@ -74,25 +74,25 @@
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">序号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server" />
+                                <input type="text" class="form-control" id="sequences" name="sequences" value="" disabled runat="server" />
                             </div>
                        </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">合同编号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="confirm_number" name="confirm_number" value="" disabled runat="server"/>
+                                <input type="text" class="form-control" id="contract_numbers" name="contract_numbers" value="" disabled runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">项目</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="item" name="item" value="" disabled runat="server"/>
+                                <input type="text" class="form-control" id="items" name="items" value="" disabled runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">业主</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server"/>
+                                <input type="text" class="form-control" id="owners" name="owners" value="" disabled runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -126,7 +126,7 @@
                         <div class="form-group">
                             <label for="lastname" class="col-sm-2 control-label">安装遗留问题</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="last_install_issue" name="last_install_issue" placeholder="安装遗留问题" runat="server"/>
+                                <input type="text" class="form-control" id="install_left_issue" name="install_left_issue" placeholder="安装遗留问题" runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">

@@ -71,25 +71,25 @@
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">项目</label>
                             <div class="col-sm-10">
-                                <input id="item" name="item" type="text" class="form-control" placeholder="项目名" runat="server" />
+                                <input id="items" name="item" type="text" class="form-control" placeholder="项目名" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">业主</label>
                             <div class="col-sm-10">
-                                <input id="owner" name="owner" type="text" class="form-control" placeholder="业主" runat="server" />
+                                <input id="owners" name="owner" type="text" class="form-control" placeholder="业主" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">家装设计师</label>
                             <div class="col-sm-10">
-                                <input id="home_style_designer" name="home_style_designer" type="text" class="form-control" placeholder="家装设计师" runat="server" />
+                                <input id="home_decoration_designers" name="home_decoration_designers" type="text" class="form-control" placeholder="家装设计师" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-sm-2 control-label">木作设计师</label>
                             <div class="col-sm-10">
-                                <input id="wooden_style_designer" name="wooden_style_designer" type="text" class="form-control" placeholder="木作设计师" runat="server" />
+                                <input id="wooden_decoration_designers" name="wooden_decoration_designers" type="text" class="form-control" placeholder="木作设计师" runat="server" />
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `manager` (
 
 -- 正在导出表  yiju_database.manager 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `manager` DISABLE KEYS */;
-INSERT INTO `manager` (`账号`, `密码`, ` Identity`, `姓名`) VALUES
+INSERT INTO `manager` (`账号`, `密码`, `Identity`, `姓名`) VALUES
 	('admin_m', 'admin', 'manager', 'null');
 /*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 

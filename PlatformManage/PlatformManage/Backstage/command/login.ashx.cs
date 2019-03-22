@@ -21,11 +21,11 @@ namespace PlatformManage.Backstage.cmd {
         User2 user = new User2();
 
         public void CheckUser(ref MySqlCmd.MySqlContext udata) {
-            udata.context = "SELECT * FROM MANAGER WHERE `账号`=?account AND `密码`=?password\n" +
+            udata.context = "SELECT * FROM MANAGER WHERE `account`=?account AND `password`=?password\n" +
                 "UNION\n" +
-                "SELECT * FROM ROOT_MANAGER WHERE `账号`=?account AND `密码`=?password\n" +
+                "SELECT * FROM ROOT_MANAGER WHERE `account`=?account AND `password`=?password\n" +
                 "UNION\n" +
-                "SELECT * FROM USER_FORM WHERE `账号`=?account AND `密码`=?password";
+                "SELECT * FROM USER_FORM WHERE `account`=?account AND `password`=?password";
             udata.comm = new MySqlCommand(udata.context, udata.conn);
             udata.comm.Parameters.AddWithValue("account", user.uname);
             udata.comm.Parameters.AddWithValue("password", user.pwd);
@@ -37,17 +37,13 @@ namespace PlatformManage.Backstage.cmd {
         /// <param name="sdata">由数据库返回出的身份数据</param>
         /// <returns></returns>
         public string CheckIdentity(string sdata) {
-            Regex reg = new Regex("\"[(a-z)|(\u4e00-\u9fa5)]+\";");
-            string[] res = new string[5];
+            Regex reg = new Regex("[(0-2)]");
+            Match mat = null;
+            string res;
+
             if (reg.IsMatch(sdata))
-                res = reg.Replace(sdata, new MatchEvaluator(ResultConvert)).Split('"');
-            return res[0];
-        }
-        
-        public string ResultConvert(Match match) {
-            string res = match.Value;
-            if (res != "" && res != null)
-                res = res.Substring(1, res.Length - 3);
+                mat = reg.Match(sdata);
+            res = mat.Value;
 
             return res;
         }
@@ -59,7 +55,7 @@ namespace PlatformManage.Backstage.cmd {
         /// <returns></returns>
         public string GetName(string sdata) {
             string[] res = sdata.Split('"');
-            return res[3];
+            return res[1];
         }
 
         /// <summary>
@@ -85,6 +81,7 @@ namespace PlatformManage.Backstage.cmd {
                 PlatformManage.User._user.User_Account = user.uname;
                 PlatformManage.User._user.User_Name = name;
                 PlatformManage.User._user.Identify = identify;
+                PlatformManage.User._user.SetSelectString();
 
                 context.Response.Clear();
                 context.Response.Write(jsSerializer.Serialize(res));
@@ -114,7 +111,7 @@ namespace PlatformManage.Backstage.cmd {
             catch(Exception ex) {
                 JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
 
-                var res = new { msg = "2", data = "服务器异常" };
+                var res = new { msg = "2", data = ex.Message };
                 context.Response.Clear();
                 context.Response.Write(jsSerializer.Serialize(res));
                 context.Response.End();
