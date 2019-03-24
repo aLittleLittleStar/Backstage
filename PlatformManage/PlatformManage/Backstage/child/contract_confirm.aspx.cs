@@ -19,7 +19,7 @@ namespace PlatformManage.Backstage.child {
         }
 
         private static DataTable g_dt = null;
-        private string[] contract_column = { "序号", "合同编号", "项目", "业主", "合同确认" };
+        private string[] contract_column = { "序号", "合同编号", "项目", "业主", "合同确认","合同编号" };
         protected void FilledCurrentDataGrid() {
             string select_string = PlatformManage.User._user.Select_string;
 

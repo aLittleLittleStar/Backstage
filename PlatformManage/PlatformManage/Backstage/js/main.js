@@ -6,7 +6,6 @@
 */
 $(function () {
     $('.d-firstNav').click(function (e) {
-        console.log("111");
         dropSwift($(this), '.d-firstDrop');
         // 方法阻止事件冒泡到父元素，阻止任何父事件处理程序被执行。
         e.stopPropagation();
@@ -48,8 +47,17 @@ $(function () {
     child = $(window.parent.document).find("#changeItem").attr("src");
     console.log(child);
     // 设置点击事件
+    $(".first").on("click", '#addUser', function () {
+        $(window.parent.document).find("#changeItem").attr("src", "child/add_user.html");
+    })
+    $(".first").on("click", '#userInfo', function () {
+        $(window.parent.document).find("#changeItem").attr("src", "child/user_info.aspx");
+    })
     $(".first").on("click", '#baseSet', function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/base_set.aspx");
+    })
+    $(".first").on("click", '#viewItems', function () {
+        $(window.parent.document).find("#changeItem").attr("src", "child/view_items.html");
     })
     $(".first").on("click", '#waterSeting', function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/water_settings.aspx");

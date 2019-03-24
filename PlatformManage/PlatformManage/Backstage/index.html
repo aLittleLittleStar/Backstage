@@ -13,6 +13,7 @@
     <script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="js/jqPaginator.js"></script>
     <style>
+
         body {
             background: rgb(243, 245, 248);
             overflow: hidden;
@@ -59,6 +60,7 @@
             margin-top: 8px;
         }
     </style>
+
 </head>
 <body>
     <div class="col-3 col-md-2 col-sm-3">
@@ -85,21 +87,30 @@
                 </ul>
             </div>
         </nav>
-        <iframe id="changeItem" src="child/base_set.aspx" width="100%" height="100%" style="border: none"></iframe>
+        <iframe id="changeItem" src="child/view_items.html" width="100%" height="100%" style="border: none"></iframe>
     </div>
     <script type="text/javascript">
         document.onload += load();
         function load() {
             var arr, reg = new RegExp("(^|)" + "user_data" + "=([^;]*)(;|$)");
+
+            var basesrc = $("#changeItem")[0].src
+            console.log("basesrc:", basesrc)
+
+
+
+
             if (arr = document.cookie.match(reg)) {
                 // temp对象第3个值保存了Identity的值, 用于显示不同身份用户的可访问页面
-                temp = arr[2].split('=');
-                //if (temp[2]) {
+                var temp = arr[2].split('=');
+                var tempspop = temp.pop()
+                localStorage.setItem("tempspop", tempspop);
 
-                //}
+                console.log("tempspop:", tempspop)
 
                 // 读取用户姓名添加到name_label控件中
                 var savespecies = localStorage.getItem("savespeciesKey");
+                console.log("savespecies:", savespecies);
                 document.getElementById("name_label").innerHTML = savespecies;
             }
         }

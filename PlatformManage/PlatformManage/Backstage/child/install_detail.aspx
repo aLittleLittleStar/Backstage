@@ -12,7 +12,7 @@
     <script src="../js/bootstrap-datetimepicker.min.js"></script>
     <script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
     <link rel="stylesheet" href="../css/confirm_install_data.css" />
-    <link rel="stylesheet" href="../css/modify-child.css" / >
+    <link rel="stylesheet" href="../css/modify-child.css" />
         <style>
         .modal-content .modal-body .form-group:nth-child(5) label {
             padding-top: 0px;

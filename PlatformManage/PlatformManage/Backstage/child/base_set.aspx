@@ -101,5 +101,16 @@
             </div>
         </div>
     </form>
+   <script>
+        (function () {
+            var savetemp = localStorage.getItem("tempspop");
+            if (savetemp == 2) {
+                $(".btn").hide()
+                $(".navbar-form").hide()
+                
+               console.log("savetemp11111111111111:", savetemp)
+            }
+        })(jQuery)
+    </script>
 </body>
 </html>

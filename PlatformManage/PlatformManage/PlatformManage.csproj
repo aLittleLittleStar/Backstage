@@ -62,6 +62,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backstage\child\add_user.aspx" />
+    <Content Include="Backstage\child\add_user.html" />
     <Content Include="Backstage\child\cabinet_body.aspx" />
     <Content Include="Backstage\child\confirm_install_data.aspx" />
     <Content Include="Backstage\child\contract_confirm.aspx" />
@@ -69,6 +71,8 @@
     <Content Include="Backstage\child\get_ready.aspx" />
     <Content Include="Backstage\child\install_detail.aspx" />
     <Content Include="Backstage\child\search.aspx" />
+    <Content Include="Backstage\child\view_items.aspx" />
+    <Content Include="Backstage\child\view_items.html" />
     <Content Include="Backstage\child\wardrobe.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <Content Include="Backstage\command\login.ashx" />
@@ -106,6 +110,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backstage\child\add_user.aspx.cs">
+      <DependentUpon>add_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\add_user.aspx.designer.cs">
+      <DependentUpon>add_user.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backstage\child\base_set.aspx.cs">
       <DependentUpon>base_set.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +172,13 @@
     </Compile>
     <Compile Include="Backstage\child\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\child\view_items.aspx.cs">
+      <DependentUpon>view_items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\child\view_items.aspx.designer.cs">
+      <DependentUpon>view_items.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backstage\child\wardrobe.aspx.cs">
       <DependentUpon>wardrobe.aspx</DependentUpon>

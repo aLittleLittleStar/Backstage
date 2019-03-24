@@ -82,6 +82,12 @@
                                 <input type="text" class="form-control" id="contract_affirm" name="contract_affirm" placeholder="合同确认相关事宜" runat="server" />
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">合同编号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="Text1" name="contract_affirm" placeholder="合同编号" runat="server" />
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
