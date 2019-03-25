@@ -19,13 +19,9 @@ namespace PlatformManage.Backstage.child {
         }
 
         private static DataTable g_dt = null;
-        private string[] contract_column = { "序号", "合同编号", "项目", "业主", "合同确认" };
+        private string[] contract_column = { "序号", "合同编号", "项目", "业主", "合同确认","合同编号" };
         protected void FilledCurrentDataGrid() {
-            string select_string = "SELECT * FROM ORDER_FORM";
-            if (PlatformManage.User._user.Identify != null && PlatformManage.User._user.Identify.Equals("业主"))
-                select_string += " WHERE `业主`=" + "\"" + PlatformManage.User._user.User_Name + "\"";
-            else
-                return;
+            string select_string = PlatformManage.User._user.Select_string;
 
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
@@ -36,8 +32,8 @@ namespace PlatformManage.Backstage.child {
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
-            string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
-                                   search_string + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string + "\"";
+            string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
+                                   search_string + "\" OR `OWNERS` =\"" + search_string + "\"";
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
             adapter.columns = contract_column;
@@ -79,11 +75,11 @@ namespace PlatformManage.Backstage.child {
         }
 
         private void create_cmd(ref MySqlCmd.MySqlContext udata) {
-            udata.context = "UPDATE ORDER_FORM SET `合同编号`=\"" + create_contract_code(this.number.Value)
-                            + "\", `" + Database.convert_columns_name(this.contract_comment.ID)
-                            + "`=\"" + this.contract_comment.Value
-                            + "\", `合同确定时间`=\""
-                            + DateTime.Now + "\" WHERE `序号`=\"" + this.number.Value + "\"";
+            udata.context = "UPDATE ORDER_FORM SET `CONTRACT_NUMBERS`=\"" + create_contract_code(this.sequences.Value)
+                            + "\", `CONTRACT_AFFIRM"
+                            + "`=\"" + this.contract_affirm.Value
+                            + "\", `CONTRACT_AFFIRM_TIME`=\""
+                            + DateTime.Now + "\" WHERE `SEQUENCES`=\"" + this.sequences.Value + "\"";
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
@@ -100,10 +96,10 @@ namespace PlatformManage.Backstage.child {
             ClientScript.RegisterStartupScript(this.Page.GetType(), "", "<script>document.getElementById(\"ShowButton\").click()</script>");
 
             int count = e.NewSelectedIndex + 7 * page_count;
-            this.number.Value = g_dt.Rows[count].ItemArray[0].ToString();
-            this.item.Value = g_dt.Rows[count].ItemArray[2].ToString();
-            this.owner.Value = g_dt.Rows[count].ItemArray[3].ToString();
-            this.contract_comment.Value = g_dt.Rows[count].ItemArray[4].ToString();
+            this.sequences.Value = g_dt.Rows[count].ItemArray[0].ToString();
+            this.items.Value = g_dt.Rows[count].ItemArray[2].ToString();
+            this.owners.Value = g_dt.Rows[count].ItemArray[3].ToString();
+            this.contract_affirm.Value = g_dt.Rows[count].ItemArray[4].ToString();
         }
     }
 }

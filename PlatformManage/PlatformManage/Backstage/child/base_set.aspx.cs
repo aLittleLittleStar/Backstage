@@ -24,11 +24,7 @@ namespace PlatformManage.Backstage.child {
         /// 填充数据
         /// </summary>
         protected void FilledCurrentDataGrid() {
-            string select_string = "SELECT * FROM ORDER_FORM";
-            if (PlatformManage.User._user.Identify != null && PlatformManage.User._user.Identify.Equals("业主"))
-                select_string += " WHERE `业主`=" + "\"" + PlatformManage.User._user.User_Name + "\"";
-            else
-                return;
+            string select_string = PlatformManage.User._user.Select_string;
 
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
@@ -38,8 +34,8 @@ namespace PlatformManage.Backstage.child {
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
-            string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
-                                 search_string + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string + "\"";
+            string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
+                                 search_string + "\" OR `OWNERS` =\"" + search_string + "\"";
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
             adapter.columns = base_set_column;
@@ -52,13 +48,13 @@ namespace PlatformManage.Backstage.child {
             PageSection<HtmlInputText> page = new PageSection<HtmlInputText>(this.modal_body.Controls);
             
             // 遍历所有HtmlInputText控件， 填入数据
-            string context = "INSERT INTO `ORDER_FORM` (`";
+            string context = "INSERT INTO `order_form` (`";
             for (int i = 0; i < page.ControlsContainer.Count; i++) {
                 if (i < page.ControlsContainer.Count - 1) {
-                    context += Database.convert_columns_name(page.ControlsContainer[i].Name) + "`, `";
+                    context += page.ControlsContainer[i].Name + "`, `";
                 }
                 else {
-                    context += Database.convert_columns_name(page.ControlsContainer[i].Name) + "`) VALUES ('";
+                    context += page.ControlsContainer[i].Name + "`) VALUES ('";
                     break;
                 }
             }
@@ -88,7 +84,7 @@ namespace PlatformManage.Backstage.child {
         
         // 按钮点击事件，创建新数据
         protected void submit_btn_Click(object sender, EventArgs e) {
-            if (this.item.Value == "" || this.owner.Value == "") {
+            if (this.items.Value == "" || this.owners.Value == "") {
                 string error = "<script>alert(\"Error: 项目和业主不能为空\");</script>";
                 ClientScript.RegisterStartupScript(this.Page.GetType(), "alert_apart", error);
                 return;

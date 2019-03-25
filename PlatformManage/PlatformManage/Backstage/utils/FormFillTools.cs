@@ -50,7 +50,7 @@ namespace PlatformManage.Backstage.utils {
                 foreach (DataRow row in dt.Rows) {
                     new_row = view_dt.NewRow();
                     for (int i = 0; i < uadapter.columns.Length; i++)
-                        new_row[i] = row[uadapter.columns[i]];
+                        new_row[i] = row[Database.convert_name_columns(uadapter.columns[i])];
 
                     view_dt.Rows.Add(new_row);
                 }

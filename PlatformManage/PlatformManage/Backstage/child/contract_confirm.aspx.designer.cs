@@ -76,40 +76,49 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden visiblePages;
         
         /// <summary>
-        /// number 控件。
+        /// sequences 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText number;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText sequences;
         
         /// <summary>
-        /// item 控件。
+        /// items 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText item;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText items;
         
         /// <summary>
-        /// owner 控件。
+        /// owners 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owners;
         
         /// <summary>
-        /// contract_comment 控件。
+        /// contract_affirm 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText contract_comment;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText contract_affirm;
+        
+        /// <summary>
+        /// Text1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
         
         /// <summary>
         /// SubmitButton 控件。

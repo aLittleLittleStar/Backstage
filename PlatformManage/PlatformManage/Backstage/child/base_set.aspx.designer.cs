@@ -85,40 +85,40 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modal_body;
         
         /// <summary>
-        /// item 控件。
+        /// items 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText item;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText items;
         
         /// <summary>
-        /// owner 控件。
+        /// owners 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owners;
         
         /// <summary>
-        /// home_style_designer 控件。
+        /// home_decoration_designers 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText home_style_designer;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText home_decoration_designers;
         
         /// <summary>
-        /// wooden_style_designer 控件。
+        /// wooden_decoration_designers 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText wooden_style_designer;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText wooden_decoration_designers;
         
         /// <summary>
         /// submit_btn 控件。

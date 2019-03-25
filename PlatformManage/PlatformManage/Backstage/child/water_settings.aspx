@@ -62,26 +62,26 @@
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-2 control-label">序号</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server"/>
+                                    <input type="text" class="form-control" id="sequences" name="sequences" value="" disabled runat="server"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-2 control-label">项目</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="item" name="item" value="" disabled runat="server"/>
+                                    <input type="text" class="form-control" id="items" name="items" value="" disabled runat="server"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-2 control-label">业主</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server"/>
+                                    <input type="text" class="form-control" id="owners" name="owners" value="" disabled runat="server"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-2 control-label">初测时间</label><div class="col-sm-10">
                                     <fieldset>
                                         <div class="input-group date form_datetime" data-date="2019-03-1T" data-link-field="dtp_input1">
-                                            <input id="first_test_time" name="first_test_time" class="form-control" size="16" type="text" value="" readonly runat="server"/>
+                                            <input id="preliminary_survey" name="preliminary_survey" class="form-control" size="16" type="text" value="" readonly runat="server"/>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span><span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                                         </div>
                                         <input type="hidden" id="dtp_input1" value="" /><br />

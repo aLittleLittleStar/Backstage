@@ -13,28 +13,34 @@
 <body style="background-color: #324157">
 	<div class="s-side">
 		<ul>
-			<li class="first">
+			<li class="first userInfo">
 				<div class="d-firstNav s-firstNav">
 					<span class="glyphicon glyphicon-pushpin"></span>
 					<span>基础信息</span>
 					<span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
 				</div>
-				<ul class="d-firstDrop s-firstDrop">
-					<div class="s-secondItem">
-						<li id='baseSet'>创建项目</li>
-					</div>
-					<div class="s-secondItem">
-						<li id='waterSeting'>水电</li>
-					</div>
-					<div class="s-secondItem">
-						<li id='contractConfirm'>合同确认</li>
-					</div>
-					<div class="s-secondItem">
-						<li id='confirmInstallData'>预定安装时间</li>
-					</div>
-				</ul>
+                <ul class="d-firstDrop s-firstDrop">
+                    <div class="s-secondItem secondItemHide">
+                        <li id='addUser'>添加用户</li>
+                    </div>
+                    <div class="s-secondItem secondItemHide">
+                        <li id='baseSet'>创建项目</li>
+                    </div>
+                    <div class="s-secondItem">
+                        <li id='viewItems'>查看项目</li>
+                    </div>
+                    <div class="s-secondItem secondItemHide">
+                        <li id='waterSeting'>水电</li>
+                    </div>
+                    <div class="s-secondItem secondItemHide">
+                        <li id='contractConfirm'>合同确认</li>
+                    </div>
+                    <div class="s-secondItem secondItemHide">
+                        <li id='confirmInstallData'>预定安装时间</li>
+                    </div>
+                </ul>
 			</li>
-			<li class="first">
+			<li class="first hidechild">
 				<div class="d-firstNav s-firstNav">
 					<span class="glyphicon glyphicon-object-align-bottom"></span>
 					<span>柜体</span>
@@ -52,7 +58,7 @@
 					</div>
 				</ul>
 			</li>
-			<li class="first">
+			<li class="first hidechild">
 				<div class="d-firstNav s-firstNav">
 					<span class="glyphicon glyphicon-plus"></span>
 					<span>添加项目信息</span>
@@ -64,7 +70,7 @@
 					</div>
 				</ul>
 			</li>
-			<li class="first">
+			<li class="first hidechild">
 				<div class="d-firstNav s-firstNav">
 					<span class="glyphicon glyphicon-search"></span>
 					<span>搜索项目</span>
@@ -76,7 +82,7 @@
 					</div>
 				</ul>
 			</li>
-			<li class="first">
+			<li class="first hidechild">
 				<div class="d-firstNav s-firstNav">
 					<span class="glyphicon glyphicon-cog"></span>
 					<span>设置</span>
@@ -90,5 +96,13 @@
 			</li>
 		</ul>
 	</div>
+    <script>
+        var savetemp = localStorage.getItem("tempspop");
+        console.log("savetemp:", savetemp);
+        if (savetemp == 2) {
+            $(".hidechild").hide();
+            $(".secondItemHide").hide();
+        }
+    </script>
 </body>
 </html>

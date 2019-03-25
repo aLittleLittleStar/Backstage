@@ -17,11 +17,11 @@ namespace PlatformManage.Backstage.child {
         }
 
         private static DataTable g_dt = null;
-        private string[] other_cabinet_column = { "序号", "合同编号", "项目", "业主", "合同确定时间", "实际安装时间", "安装遗留问题", "备注" };
+        private string[] other_cabinet_column = { "序号", "合同编号", "项目", "业主", "家装设计师", "木作设计师", "初测", "水电", "预定安装日期", "橱柜预定安装日期", "橱柜下单时间", "台面", "橱柜门板", "衣柜预定安装日期", "衣柜下单时间", "其他柜体", "水槽、电器", "五金配件", "合同确定时间", "实际安装时间", "安装遗留问题", "备注" };
         protected void FilledCurrentDataGrid(string search_string) {
-            string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
-                                   search_string.Trim() + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string.Trim()
-                                   + "\" OR `" + Database.convert_columns_name("confirm_number") + "` =\"" + search_string.Trim() + "\"";
+            string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
+                                   search_string.Trim() + "\" OR `OWNERS` =\"" + search_string.Trim()
+                                   + "\" OR `CONTRACT_NUMBERS` =\"" + search_string.Trim() + "\"";
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
             adapter.columns = other_cabinet_column;

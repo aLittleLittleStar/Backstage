@@ -61,25 +61,31 @@
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">序号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="number" name="number" value="" disabled runat="server" />
+                                <input type="text" class="form-control" id="sequences" name="sequences" value="" disabled runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">项目</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="item" name="item" value="" disabled runat="server" />
+                                <input type="text" class="form-control" id="items" name="items" value="" disabled runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">业主</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="owner" name="owner" value="" disabled runat="server" />
+                                <input type="text" class="form-control" id="owners" name="owners" value="" disabled runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">合同确认</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="contract_comment" name="contract_comment" placeholder="合同确认相关事宜" runat="server" />
+                                <input type="text" class="form-control" id="contract_affirm" name="contract_affirm" placeholder="合同确认相关事宜" runat="server" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">合同编号</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="Text1" name="contract_affirm" placeholder="合同编号" runat="server" />
                             </div>
                         </div>
                     </div>

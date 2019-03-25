@@ -36,6 +36,21 @@ namespace PlatformManage {
             get { return user_name; }
             set { user_name = value; }
         }
+
+        private string select_string;
+        public String Select_string {
+            get { return select_string; }
+        }
+
+        public void SetSelectString() {
+            string select_string = "SELECT * FROM ORDER_FORM";
+            if (this.identify != null) {
+                if (this.identify.Equals("2"))
+                    select_string += " WHERE `OWNERS`=" + "\"" + this.user_name + "\"";
+            }
+
+            this.select_string = select_string;
+        }
     };
 
     public class Global : System.Web.HttpApplication {

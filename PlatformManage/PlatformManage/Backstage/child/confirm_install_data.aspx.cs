@@ -21,11 +21,7 @@ namespace PlatformManage.Backstage.child {
         private static DataTable g_dt = null;
         private string[] other_cabinet_column = { "序号", "合同编号", "项目", "业主", "预定安装日期" };
         protected void FilledCurrentDataGrid() {
-            string select_string = "SELECT * FROM ORDER_FORM";
-            if (PlatformManage.User._user.Identify != null && PlatformManage.User._user.Identify.Equals("业主"))
-                select_string += " WHERE `业主`=" + "\"" + PlatformManage.User._user.User_Name + "\"";
-            else
-                return;
+            string select_string = PlatformManage.User._user.Select_string;
 
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
@@ -36,9 +32,9 @@ namespace PlatformManage.Backstage.child {
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
-            string select_string = "SELECT * FROM ORDER_FORM WHERE `" + Database.convert_columns_name("item") + "` = \"" +
-                                   search_string + "\" OR `" + Database.convert_columns_name("owner") + "` =\"" + search_string
-                                   + "\" OR `" + Database.convert_columns_name("confirm_number") + "` =\"" + search_string + "\"";
+            string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
+                                   search_string + "\" OR `OWNERS` =\"" + search_string
+                                   + "\" OR `CONTRACT_NUMBERS` =\"" + search_string + "\"";
             MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
             adapter.grid_view = this.GridView1;
             adapter.columns = other_cabinet_column;
@@ -69,8 +65,7 @@ namespace PlatformManage.Backstage.child {
         }
 
         private void create_cmd(ref MySqlCmd.MySqlContext udata) {
-            udata.context = "UPDATE ORDER_FORM SET `" + Database.convert_columns_name(this.reserve_time.ID)
-                            + "`=\"" + this.reserve_time.Value + "\" WHERE `序号`=\"" + this.number.Value + "\"";
+            udata.context = "UPDATE ORDER_FORM SET `RESERVE_TIME`=\"" + this.reserve_time.Value + "\" WHERE `SEQUENCES`=\"" + this.sequences.Value + "\"";
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
@@ -87,10 +82,10 @@ namespace PlatformManage.Backstage.child {
             ClientScript.RegisterStartupScript(this.Page.GetType(), "", "<script>document.getElementById(\"ShowButton\").click()</script>");
 
             int count = e.NewSelectedIndex + 7 * page_count;
-            this.number.Value = g_dt.Rows[count].ItemArray[0].ToString();
-            this.confirm_number.Value = g_dt.Rows[count].ItemArray[1].ToString();
-            this.item.Value = g_dt.Rows[count].ItemArray[2].ToString();
-            this.owner.Value = g_dt.Rows[count].ItemArray[3].ToString();
+            this.sequences.Value = g_dt.Rows[count].ItemArray[0].ToString();
+            this.contract_numbers.Value = g_dt.Rows[count].ItemArray[1].ToString();
+            this.items.Value = g_dt.Rows[count].ItemArray[2].ToString();
+            this.owners.Value = g_dt.Rows[count].ItemArray[3].ToString();
             this.reserve_time.Value = g_dt.Rows[count].ItemArray[4].ToString();
         }
     }

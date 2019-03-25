@@ -18,49 +18,51 @@ USE `yiju_database`;
 
 -- 导出  表 yiju_database.manager 结构
 CREATE TABLE IF NOT EXISTS `manager` (
-  `账号` varchar(10) NOT NULL,
-  `密码` varchar(15) NOT NULL,
-  `Identity` varchar(7) NOT NULL DEFAULT 'manager',
-  `姓名` varchar(10) NOT NULL DEFAULT 'null'
+  `account` varchar(10) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `name` varchar(10) NOT NULL DEFAULT 'null',
+  `Identity` int(1) NOT NULL DEFAULT '1',
+  `sequences` int(1) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 正在导出表  yiju_database.manager 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `manager` DISABLE KEYS */;
-INSERT INTO `manager` (`账号`, `密码`, ` Identity`, `姓名`) VALUES
-	('admin_m', 'admin', 'manager', 'null');
+INSERT INTO `manager` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
+	('admin_m', 'admin', 'null', 1, 0);
 /*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 
 -- 导出  表 yiju_database.order_form 结构
 CREATE TABLE IF NOT EXISTS `order_form` (
-  `序号` int(11) NOT NULL AUTO_INCREMENT,
-  `合同编号` varchar(50) DEFAULT NULL,
-  `项目` varchar(50) NOT NULL,
-  `业主` varchar(50) NOT NULL,
-  `家装设计师` varchar(50) DEFAULT '无',
-  `木作设计师` varchar(50) DEFAULT '无',
-  `初测` varchar(10) DEFAULT NULL,
-  `水电` varchar(10) DEFAULT NULL,
-  `合同确认` varchar(50) DEFAULT NULL,
-  `合同确定时间` varchar(10) DEFAULT NULL,
-  `预定安装日期` varchar(10) DEFAULT NULL,
-  `橱柜下单时间` varchar(10) DEFAULT NULL,
-  `衣柜下单时间` varchar(10) DEFAULT NULL,
-  `台面` varchar(50) DEFAULT NULL,
-  `橱柜门板` varchar(50) DEFAULT NULL,
-  `其他柜体` varchar(50) DEFAULT NULL,
-  `橱柜预定安装日期` varchar(10) DEFAULT NULL,
-  `衣柜预定安装日期` varchar(10) DEFAULT NULL,
-  `水槽、电器` varchar(50) DEFAULT NULL,
-  `五金配件` varchar(50) DEFAULT NULL,
-  `实际安装时间` varchar(10) DEFAULT NULL,
-  `安装遗留问题` varchar(100) DEFAULT NULL,
-  `备注` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`序号`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+  `sequences` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `contract_numbers` varchar(50) DEFAULT NULL,
+  `items` varchar(20) NOT NULL,
+  `owners` varchar(10) NOT NULL,
+  `home_decoration_designers` varchar(50) DEFAULT '无',
+  `wooden_decoration_designers` varchar(50) DEFAULT '无',
+  `preliminary_survey` varchar(10) DEFAULT NULL,
+  `water_electric_time` varchar(10) DEFAULT NULL,
+  `contract_affirm` varchar(50) DEFAULT NULL,
+  `contract_affirm_time` varchar(10) DEFAULT NULL,
+  `reserve_time` varchar(10) DEFAULT NULL,
+  `board_order_time` varchar(10) DEFAULT NULL,
+  `clothes_board_order_time` varchar(10) DEFAULT NULL,
+  `table_board` varchar(50) DEFAULT NULL,
+  `board_door_table` varchar(50) DEFAULT NULL,
+  `other_cabinet` varchar(50) DEFAULT NULL,
+  `board_reserve_time` varchar(10) DEFAULT NULL,
+  `clothes_board_reserve_time` varchar(10) DEFAULT NULL,
+  `waterchannel_wiring` varchar(50) DEFAULT NULL,
+  `hardware_fitting` varchar(50) DEFAULT NULL,
+  `real_install_time` varchar(10) DEFAULT NULL,
+  `install_left_issue` varchar(100) DEFAULT NULL,
+  `comment` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`sequences`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  yiju_database.order_form 的数据：~22 rows (大约)
 /*!40000 ALTER TABLE `order_form` DISABLE KEYS */;
-INSERT INTO `order_form` (`序号`, `合同编号`, `项目`, `业主`, `家装设计师`, `木作设计师`, `初测`, `水电`, `合同确认`, `合同确定时间`, `预定安装日期`, `橱柜下单时间`, `衣柜下单时间`, `台面`, `橱柜门板`, `其他柜体`, `橱柜预定安装日期`, `衣柜预定安装日期`, `水槽、电器`, `五金配件`, `实际安装时间`, `安装遗留问题`, `备注`) VALUES
+INSERT INTO `order_form` (`sequences`, `contract_numbers`, `items`, `owners`, `home_decoration_designers`, `wooden_decoration_designers`, `preliminary_survey`, `water_electric_time`, `contract_affirm`, `contract_affirm_time`, `reserve_time`, `board_order_time`, `clothes_board_order_time`, `table_board`, `board_door_table`, `other_cabinet`, `board_reserve_time`, `clothes_board_reserve_time`, `waterchannel_wiring`, `hardware_fitting`, `real_install_time`, `install_left_issue`, `comment`) VALUES
 	(1, 'YS-2019-1-20-1', 'asdf', 'ss', '', '', '2018-08-02', '2018-08-03', 'wwwwww', NULL, '2018-09-06', NULL, '2018-08-29', NULL, NULL, 'ddddddddddd', NULL, '2018-08-28', NULL, NULL, NULL, NULL, '是的'),
 	(2, 'YS-2019/1/18 0:00:00-2', 'asdfds', 'sddsf', '', '', '2018-10-03', '2018-10-04', NULL, NULL, NULL, '2018-08-29', NULL, '这是台面', '这是门板', 'wwwwwwwwwwwwwsaf', '2018-08-31', NULL, NULL, NULL, NULL, NULL, 'sddsf'),
 	(3, 'YS-2019-2-22-3', 'sss', 'sss', '', '', '2018-08-29', '2018-08-30', 'yews', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'yews'),
@@ -82,35 +84,44 @@ INSERT INTO `order_form` (`序号`, `合同编号`, `项目`, `业主`, `家装�
 	(19, NULL, 'asfd', 'qwreipu', 'jvam,nsdf', 'poiwer', '2018-08-29', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(20, NULL, 'ww', 'wr', 'sadf', 'dd', '2018-09-12', '2018-09-13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 	(21, NULL, 'we', 'are', 'hello', 'world', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(22, 'YS-2019-2-22-22', 'test', 'sss', 'lay', 'shiry', '2018-08-29', '2018-08-31', '666', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', NULL, NULL, NULL);
+	(22, 'YS-2019-2-22-22', 'test', 'sss', 'lay', 'shiry', '2018-08-29', '2018-08-31', '666', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', NULL, NULL, NULL),
+	(23, NULL, '测试项目', '俊杰', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `order_form` ENABLE KEYS */;
 
 -- 导出  表 yiju_database.root_manager 结构
 CREATE TABLE IF NOT EXISTS `root_manager` (
-  `账号` varchar(10) NOT NULL,
-  `密码` varchar(15) NOT NULL,
-  `Identity` varchar(4) NOT NULL DEFAULT 'root',
-  `姓名` varchar(10) NOT NULL DEFAULT 'null'
+  `account` varchar(10) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `name` varchar(10) NOT NULL DEFAULT 'null',
+  `Identity` int(1) NOT NULL DEFAULT '0',
+  `sequences` int(1) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 正在导出表  yiju_database.root_manager 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `root_manager` DISABLE KEYS */;
-INSERT INTO `root_manager` (`账号`, `密码`, `Identity`, `姓名`) VALUES
-	('admin_rm', 'admin', 'root', 'null');
+INSERT INTO `root_manager` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
+	('admin_rm', 'admin', 'null', 0, 0);
 /*!40000 ALTER TABLE `root_manager` ENABLE KEYS */;
 
 -- 导出  表 yiju_database.user_form 结构
 CREATE TABLE IF NOT EXISTS `user_form` (
-  `账号` varchar(10) NOT NULL,
-  `密码` varchar(15) NOT NULL,
-  `Identity` varchar(10) NOT NULL DEFAULT '业主',
-  `姓名` varchar(10) NOT NULL
+  `account` varchar(10) NOT NULL,
+  `password` varchar(15) NOT NULL DEFAULT '12345678',
+  `name` varchar(10) NOT NULL,
+  `Identity` int(1) NOT NULL DEFAULT '2',
+  `sequences` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`account`),
+  KEY `FK_IdentityWithOrder` (`sequences`),
+  CONSTRAINT `FK_IdentityWithOrder` FOREIGN KEY (`sequences`) REFERENCES `order_form` (`sequences`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.user_form 的数据：~1 rows (大约)
+-- 正在导出表  yiju_database.user_form 的数据：~3 rows (大约)
 /*!40000 ALTER TABLE `user_form` DISABLE KEYS */;
-INSERT INTO `user_form` (`账号`, `密码`, `Identity`, `姓名`) VALUES
-	('admin_u', 'admin', '业主', '李三');
+INSERT INTO `user_form` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
+	('admin_mm', 'admin', '张三', 2, 7),
+	('admin_u', 'admin', '李三', 2, 5),
+	('admin_um', 'admin', 'ss', 2, 1);
 /*!40000 ALTER TABLE `user_form` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

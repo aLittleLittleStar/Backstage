@@ -10,6 +10,15 @@
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/modify-child.css" />
+    <style>
+        #search .input-group div {
+            overflow: auto;
+            padding-bottom: 10px;
+        }
+        #search .input-group div table {
+            width: 280%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

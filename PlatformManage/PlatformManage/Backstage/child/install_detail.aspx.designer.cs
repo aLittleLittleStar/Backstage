@@ -85,40 +85,40 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden visiblePages;
         
         /// <summary>
-        /// number 控件。
+        /// sequences 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText number;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText sequences;
         
         /// <summary>
-        /// confirm_number 控件。
+        /// contract_numbers 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText confirm_number;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText contract_numbers;
         
         /// <summary>
-        /// item 控件。
+        /// items 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText item;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText items;
         
         /// <summary>
-        /// owner 控件。
+        /// owners 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText owner;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText owners;
         
         /// <summary>
         /// real_install_time 控件。
@@ -130,13 +130,13 @@ namespace PlatformManage.Backstage.child {
         protected global::System.Web.UI.HtmlControls.HtmlInputText real_install_time;
         
         /// <summary>
-        /// last_install_issue 控件。
+        /// install_left_issue 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText last_install_issue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText install_left_issue;
         
         /// <summary>
         /// comment 控件。
