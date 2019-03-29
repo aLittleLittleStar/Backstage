@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data;
 
 namespace PlatformManage {
     class User {
@@ -19,8 +20,14 @@ namespace PlatformManage {
             }
         }
 
+        private int sequence;
+        public int Sequence {
+            get { return sequence; }
+            set { sequence = value; }
+        }
+
         private string user_account;
-        public String User_Account {
+        public String Account {
             get { return user_account; }
             set { user_account = value; }
         }
@@ -32,7 +39,7 @@ namespace PlatformManage {
         }
 
         private string user_name;
-        public String User_Name {
+        public String Name {
             get { return user_name; }
             set { user_name = value; }
         }
@@ -42,11 +49,14 @@ namespace PlatformManage {
             get { return select_string; }
         }
 
+        /// <summary>
+        /// 查询项目表
+        /// </summary>
         public void SetSelectString() {
             string select_string = "SELECT * FROM ORDER_FORM";
-            if (this.identify != null) {
+            if (this.identify != null && this.sequence != 0) {
                 if (this.identify.Equals("2"))
-                    select_string += " WHERE `OWNERS`=" + "\"" + this.user_name + "\"";
+                    select_string += " WHERE `SEQUENCES`=" + "\"" + this.sequence + "\"";
             }
 
             this.select_string = select_string;

@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Backstage\child\add_user.aspx" />
-    <Content Include="Backstage\child\add_user.html" />
     <Content Include="Backstage\child\cabinet_body.aspx" />
     <Content Include="Backstage\child\confirm_install_data.aspx" />
     <Content Include="Backstage\child\contract_confirm.aspx" />
@@ -72,7 +71,6 @@
     <Content Include="Backstage\child\install_detail.aspx" />
     <Content Include="Backstage\child\search.aspx" />
     <Content Include="Backstage\child\view_items.aspx" />
-    <Content Include="Backstage\child\view_items.html" />
     <Content Include="Backstage\child\wardrobe.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <Content Include="Backstage\command\login.ashx" />
@@ -201,6 +199,7 @@
     <Compile Include="Backstage\MySql_utils\MySqlCmd.cs" />
     <Compile Include="Backstage\utils\FormFillTools.cs" />
     <Compile Include="Backstage\utils\PageSection.cs" />
+    <Compile Include="Backstage\utils\UtilityEventClass.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

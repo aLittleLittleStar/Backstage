@@ -16,18 +16,13 @@ namespace PlatformManage.Backstage.child {
 
         }
 
-        private static DataTable g_dt = null;
-        private string[] other_cabinet_column = { "序号", "合同编号", "项目", "业主", "家装设计师", "木作设计师", "初测", "水电", "预定安装日期", "橱柜预定安装日期", "橱柜下单时间", "台面", "橱柜门板", "衣柜预定安装日期", "衣柜下单时间", "其他柜体", "水槽、电器", "五金配件", "合同确定时间", "实际安装时间", "安装遗留问题", "备注" };
+        public static DataTable g_dt = null;
+        private string[] display_columns = { "序号", "合同编号", "项目", "业主", "家装设计师", "木作设计师", "初测", "水电", "预定安装日期", "橱柜预定安装日期", "橱柜下单时间", "台面", "橱柜门板", "衣柜预定安装日期", "衣柜下单时间", "其他柜体", "水槽、电器", "五金配件", "合同确定时间", "实际安装时间", "安装遗留问题", "备注" };
         protected void FilledCurrentDataGrid(string search_string) {
             string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
                                    search_string.Trim() + "\" OR `OWNERS` =\"" + search_string.Trim()
                                    + "\" OR `CONTRACT_NUMBERS` =\"" + search_string.Trim() + "\"";
-            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
-            adapter.grid_view = this.GridView1;
-            adapter.columns = other_cabinet_column;
-            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
-                                            select_string, ref adapter);
-            g_dt = adapter.data_table;
+            g_dt = UtilityEventClass.UtilityFilledGridViewFunction(this.GridView1, display_columns, select_string);
         }
 
         protected void SearchButton_Click(object sender, EventArgs e) {
@@ -35,19 +30,7 @@ namespace PlatformManage.Backstage.child {
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e) {
-            if (e.NewPageIndex == -2) {
-                TextBox txtBox = this.GridView1.BottomPagerRow.FindControl("txtNewPageIndex") as TextBox;
-                int txtPageIndex = Math.Abs(int.Parse(txtBox.Text.Trim()));
-                if (txtPageIndex > 0) {
-                    this.GridView1.PageIndex = txtPageIndex - 1;
-                }
-                else {
-                    this.GridView1.PageIndex = 0;
-                }
-            }
-            else {
-                this.GridView1.PageIndex = e.NewPageIndex;
-            }
+            UtilityEventClass.UtilityPageIndexChanging(sender, e);
             FilledCurrentDataGrid(this.search_text.Value.ToString());
         }
     }

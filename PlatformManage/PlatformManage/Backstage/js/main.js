@@ -48,7 +48,7 @@ $(function () {
     console.log(child);
     // 设置点击事件
     $(".first").on("click", '#addUser', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/add_user.html");
+        $(window.parent.document).find("#changeItem").attr("src", "child/add_user.aspx");
     })
     $(".first").on("click", '#userInfo', function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/user_info.aspx");
@@ -57,7 +57,7 @@ $(function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/base_set.aspx");
     })
     $(".first").on("click", '#viewItems', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/view_items.html");
+        $(window.parent.document).find("#changeItem").attr("src", "child/view_items.aspx");
     })
     $(".first").on("click", '#waterSeting', function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/water_settings.aspx");

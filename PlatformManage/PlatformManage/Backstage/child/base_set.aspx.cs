@@ -19,31 +19,21 @@ namespace PlatformManage.Backstage.child {
             }
         }
 
-        private string[] base_set_column = { "序号", "项目", "业主", "家装设计师", "木作设计师" };
+        private string[] display_columns = { "序号", "项目", "业主", "家装设计师", "木作设计师" };
         /// <summary>
         /// 填充数据
         /// </summary>
         protected void FilledCurrentDataGrid() {
-            string select_string = PlatformManage.User._user.Select_string;
-
-            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
-            adapter.grid_view = this.GridView1;
-            adapter.columns = base_set_column;
-            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
-                                            select_string, ref adapter);
+            UtilityEventClass.UtilityFilledGridViewFunction(this.GridView1, display_columns);
         }
 
         protected void FilledCurrentDataGrid(string search_string) {
             string select_string = "SELECT * FROM ORDER_FORM WHERE `ITEMS` = \"" +
                                  search_string + "\" OR `OWNERS` =\"" + search_string + "\"";
-            MySqlCmd.MySqlAdapter adapter = new MySqlCmd.MySqlAdapter();
-            adapter.grid_view = this.GridView1;
-            adapter.columns = base_set_column;
-            FormFillTools.FilledCurrentForm(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString(),
-                                            select_string, ref adapter);
+            UtilityEventClass.UtilityFilledGridViewFunction(this.GridView1, display_columns, select_string);
         }
 
-        private void Create_Cmd(ref MySqlCmd.MySqlContext udata) {
+        private void create_cmd(ref MySqlCmd.MySqlContext udata) {
             // 遍历页面找到HtmlInputText控件
             PageSection<HtmlInputText> page = new PageSection<HtmlInputText>(this.modal_body.Controls);
             
@@ -68,20 +58,16 @@ namespace PlatformManage.Backstage.child {
                     break;
                 }
             }
+
             udata.context = context;
         }
 
         // 上传用户填写的表格数据
-        private void Upload_UserData() {
-            MySqlCmd.MySqlContext input_udata = new MySqlCmd.MySqlContext();
-            input_udata.conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
-            input_udata.status = MySqlRequest.INSERT;
-            input_udata.res = 0;
-            input_udata.create_cmd = Create_Cmd;
-
-            MySqlCmd.SetMySqlCommand(ref input_udata);
+        protected void SubmitButton_Click() {
+            UtilityEventClass.UtilitySubmitButtonClick(MySqlRequest.INSERT, create_cmd);
+            FilledCurrentDataGrid();
         }
-        
+
         // 按钮点击事件，创建新数据
         protected void submit_btn_Click(object sender, EventArgs e) {
             if (this.items.Value == "" || this.owners.Value == "") {
@@ -90,7 +76,7 @@ namespace PlatformManage.Backstage.child {
                 return;
             }
 
-            Upload_UserData();
+            SubmitButton_Click();
             string success = "<script>alert(\"项目创建成功\");</script>";
             ClientScript.RegisterStartupScript(this.Page.GetType(), "alert_apart", success);
 
@@ -98,19 +84,7 @@ namespace PlatformManage.Backstage.child {
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e) {
-            if (e.NewPageIndex == -2) {
-                TextBox txtBox = this.GridView1.BottomPagerRow.FindControl("txtNewPageIndex") as TextBox;
-                int txtPageIndex = Math.Abs(int.Parse(txtBox.Text.Trim()));
-                if (txtPageIndex > 0) {
-                    this.GridView1.PageIndex = txtPageIndex - 1;
-                }
-                else {
-                    this.GridView1.PageIndex = 0;
-                }
-            }
-            else {
-                this.GridView1.PageIndex = e.NewPageIndex;
-            }
+            UtilityEventClass.UtilityPageIndexChanging(sender, e);
             FilledCurrentDataGrid();
         }
 

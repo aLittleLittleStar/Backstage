@@ -24,7 +24,7 @@
     <form id="form1" runat="server">
         <section id="search">
             <div class="input-group">
-                <input id="search_text" name="search_text" type="text" class="form-control input-lg" placeholder="请输入搜索内容" runat="server" />
+                <input id="search_text" name="search_text" type="text" class="form-control input-lg" placeholder="请输入搜索项目名或业主" runat="server" />
                 <asp:Button ID="SearchButton" Text="查询" CssClass="btn btn-primary btn-sm glyphicon glyphicon-search" runat="server" OnClick="SearchButton_Click" />
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="7" OnPageIndexChanging="GridView1_PageIndexChanging">
                     <PagerTemplate>

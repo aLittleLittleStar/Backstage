@@ -58,40 +58,60 @@ namespace PlatformManage.Backstage.cmd {
             return res[1];
         }
 
+        public int GetSequences(string sdata) {
+            Regex reg = new Regex("\"[\\d]+\"$");
+            Match mat = null;
+            string[] res;
+
+            if (reg.IsMatch(sdata))
+                mat = reg.Match(sdata);
+            res = mat.Value.Split('\"');
+            int seq = Convert.ToInt32(res[1]);
+
+            return seq;
+        }
+
+        /// <summary>
+        /// 对字段序列化返回给前端
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="res"></param>
+        private void ResponseToClient(HttpContext context, object res) {
+            JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
+            context.Response.Clear();
+            context.Response.Write(jsSerializer.Serialize(res));
+            context.Response.End();
+        }
+
         /// <summary>
         /// 返回响应结果
         /// </summary>
         /// <param name="context">Http数据报对象</param>
         /// <param name="udata">数据库对象</param>
         public void ResultResponse(HttpContext context, MySqlCmd.MySqlContext udata) {
-            JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
-
             if (udata.res != 0) {
                 string name = GetName(udata.context);
                 string identify = CheckIdentity(udata.context);
+                int sequences = GetSequences(udata.context);
 
                 HttpCookie cookie = new HttpCookie("user_data");
                 cookie["name"] = user.uname;
                 cookie["identify"] = identify;
                 cookie.Expires.AddHours(1.0);
                 context.Response.AppendCookie(cookie);
-
-                var res = new { msg = "1", data = name };
-
-                PlatformManage.User._user.User_Account = user.uname;
-                PlatformManage.User._user.User_Name = name;
+                
+                PlatformManage.User._user.Account = user.uname;
+                PlatformManage.User._user.Name = name;
                 PlatformManage.User._user.Identify = identify;
+                PlatformManage.User._user.Sequence = sequences;
                 PlatformManage.User._user.SetSelectString();
 
-                context.Response.Clear();
-                context.Response.Write(jsSerializer.Serialize(res));
-                context.Response.End();
+                var res = new { msg = "1", data = name };
+                ResponseToClient(context, res);
             }
             else {
                 var res = new { msg = "0", data = "not exists" };
-                context.Response.Clear();
-                context.Response.Write(jsSerializer.Serialize(res));
-                context.Response.End();
+                ResponseToClient(context, res);
             }
         }
 
@@ -101,20 +121,16 @@ namespace PlatformManage.Backstage.cmd {
 
             MySqlCmd.MySqlContext udata = new MySqlCmd.MySqlContext();
             try {    
-                udata.conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["senshang_database_connection_string"].ToString());
+                udata.conn = MySqlCmd.Connection(WebConfigurationManager.ConnectionStrings["MySqlConnectionString"].ToString());
                 udata.status = MySqlRequest.SEARCH;
-                udata.res = 0;
                 udata.create_cmd = CheckUser;
+                udata.res = 0;
 
                 MySqlCmd.LoginCommand(ref udata);
             }
             catch(Exception ex) {
-                JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
-
                 var res = new { msg = "2", data = ex.Message };
-                context.Response.Clear();
-                context.Response.Write(jsSerializer.Serialize(res));
-                context.Response.End();
+                ResponseToClient(context, res);
 
                 return;
             }

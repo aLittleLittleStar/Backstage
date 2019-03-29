@@ -29,6 +29,8 @@ namespace PlatformManage.Backstage.MySql_utils {
             { "real_install_time", "实际安装时间" },
             { "install_left_issue", "安装遗留问题" },
             { "comment", "备注" },
+            { "account", "账号" },
+            { "name", "姓名" },
         };
 
         /// <summary>
@@ -62,6 +64,10 @@ namespace PlatformManage.Backstage.MySql_utils {
 
             if (columns != "") return columns;
             else return null;
+        }
+
+        public static string convert_dataTime(DateTime dt) {
+            return string.Format("{0:yyyy-MM-dd}", dt);
         }
     }
 }

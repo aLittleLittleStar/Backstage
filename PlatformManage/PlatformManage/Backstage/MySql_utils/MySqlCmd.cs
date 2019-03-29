@@ -109,7 +109,7 @@ namespace PlatformManage.Backstage.MySql_utils {
                 reader.Read();
                 if (reader.HasRows) {
                     if (reader.FieldCount > 2) {
-                        udata.context = "\"" + reader.GetString(2) + "\";" + "\"" + reader.GetString(3) + "\"";
+                        udata.context = "\"" + reader.GetString(2) + "\";" + "\"" + reader.GetString(3) + "\";" + "\"" + reader.GetString(4) + "\"";
                     }
                     else {
                         udata.context = "";
