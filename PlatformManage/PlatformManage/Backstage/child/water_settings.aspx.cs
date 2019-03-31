@@ -13,13 +13,13 @@ using PlatformManage.Backstage.utils;
 
 namespace PlatformManage.Backstage.child {
     public partial class water_settings : System.Web.UI.Page {
+        private static DataTable g_dt = null;
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 FilledCurrentDataGrid();
             }
         }
-
-        private static DataTable g_dt = null;
+        
         private string[] display_columns = { "序号", "项目", "业主", "初测", "水电" };
         protected void FilledCurrentDataGrid() {
             g_dt = UtilityEventClass.UtilityFilledGridViewFunction(this.GridView1, display_columns);

@@ -52,14 +52,14 @@ namespace PlatformManage.Backstage.utils {
             if (e.NewPageIndex == -2) {
                 TextBox txtBox = grid_view.BottomPagerRow.FindControl ("txtNewPageIndex") as TextBox;
                 int txtPageIndex = Math.Abs (int.Parse (txtBox.Text.Trim ()));
-                if (txtPageIndex > 0) {
+                if (txtPageIndex > 0)
                     grid_view.PageIndex = txtPageIndex - 1;
-                } else {
+                else
                     grid_view.PageIndex = 0;
-                }
-            } else {
-                grid_view.PageIndex = e.NewPageIndex;
             }
+            else
+                grid_view.PageIndex = e.NewPageIndex;
+
             page_count = grid_view.PageIndex;
         }
 

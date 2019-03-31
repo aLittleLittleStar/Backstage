@@ -38,7 +38,7 @@
                             <asp:LinkButton ID="btnGo" runat="server" CausesValidation="False" CommandArgument="-1" CommandName="Page" Text="跳转"></asp:LinkButton>
                         </PagerTemplate>
                   </asp:GridView>
-                    <!--ShowButton前台隐藏触发-->
+                  <!--ShowButton前台隐藏触发-->
                   <button id="ShowButton" name="ShowButton" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#inputMsg" style="display:none">录入信息</button>
                 </div>
             </div>
