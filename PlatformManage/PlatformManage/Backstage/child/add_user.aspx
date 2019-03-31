@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/confirm_install_data.css" />
-    <link rel="stylesheet" href="../css/modify-child.css" />
+    <link rel="stylesheet" href="../css/base.css" />
 </head>
 <body>
     <form id="add_user" runat="server">
