@@ -77,15 +77,15 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="firstname" class="col-sm-2 control-label">合同确认</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="contract_affirm" name="contract_affirm" placeholder="合同确认相关事宜" runat="server" />
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">合同编号</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="contract_numbers" name="contract_numbers" placeholder="合同编号" runat="server" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">合同确认</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="contract_affirm" name="contract_affirm" placeholder="合同确认相关事宜" runat="server" />
                             </div>
                         </div>
                     </div>

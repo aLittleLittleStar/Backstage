@@ -17,7 +17,7 @@ CREATE DATABASE IF NOT EXISTS `yiju_database` /*!40100 DEFAULT CHARACTER SET utf
 USE `yiju_database`;
 
 -- 导出  表 yiju_database.manager 结构
-CREATE TABLE IF NOT EXISTS `manager` (
+CREATE TABLE IF NOT EXISTS `manager` (managerorder_form
   `account` varchar(10) NOT NULL,
   `password` varchar(15) NOT NULL,
   `name` varchar(10) NOT NULL DEFAULT 'null',
@@ -165,3 +165,4 @@ SET SQL_MODE=@OLDTMP_SQL_MODE;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+managerorder_form
