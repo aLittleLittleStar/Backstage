@@ -80,7 +80,7 @@
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-2 control-label">初测时间</label><div class="col-sm-10">
                                     <fieldset>
-                                        <div class="input-group date form_datetime" data-date="2019-03-1T" data-link-field="dtp_input1">
+                                        <div class="input-group date form_datetime" data-link-field="dtp_input1">
                                             <input id="preliminary_survey" name="preliminary_survey" class="form-control" size="16" type="text" value="" readonly runat="server"/>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span><span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                                         </div>
@@ -91,7 +91,7 @@
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-2 control-label">水电时间</label><div class="col-sm-10">
                                     <fieldset>
-                                        <div class="input-group date form_datetime" data-date="2019-03-1T" data-link-field="dtp_input1">
+                                        <div class="input-group date form_datetime" data-link-field="dtp_input1">
                                             <input id="water_electric_time" name="water_electric_time" class="form-control" size="16" type="text" value="" readonly runat="server"/>
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span><span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                                         </div>
@@ -112,7 +112,7 @@
             $('.form_datetime').datetimepicker({
   	                language:  'zh-CN',
   	                weekStart: 1,
-  	                todayBtn:  1,
+  	                todayBtn:  true,
 		            autoclose: 1,
 		            todayHighlight: 1,
 		            startView: 2,

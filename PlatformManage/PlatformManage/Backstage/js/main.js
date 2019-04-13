@@ -45,7 +45,6 @@ $(function () {
     // html页面的点击替换
     // 1.获取iframe的src
     child = $(window.parent.document).find("#changeItem").attr("src");
-    console.log(child);
     // 设置点击事件
     $(".first").on("click", '#addUser', function () {
         $(window.parent.document).find("#changeItem").attr("src", "child/add_user.aspx");

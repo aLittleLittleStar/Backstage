@@ -10,33 +10,11 @@
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/confirm_install_data.css" />
-    <style>
-        #userList {
-            padding-top: 0px;
-        }
-        .page-header {
-            margin-left: 9%;
-            margin-right: 7%;
-            margin-top: 0px;
-        }
-        .container{
-            overflow: auto;
-        }
-        .content {
-            width: 2500px;
-        }
-        tbody tr:last-child td > * {
-            float: left;
-        }
-        tbody tr:last-child td input {
-            margin-top: 4px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="../css/modify-child.css" />
 </head>
 <body>
     <form id="view_items" runat="server">
-        <section id="userList">
+        <section id="userList" style="padding-top: 0">
         <div class="page-header">
             <h3>查看项目</h3>
         </div>
@@ -87,21 +65,16 @@
     </form>
     <script>
         var savetemp = localStorage.getItem("tempspop");
-        console.log("savetemp:", savetemp);
         var lastth = $("tbody tr").children("th")[0];
         var lasttd = $("tbody tr").children("td")[0];
         var lasettr = $("tbody").children();
         var lasttrlength = $("tbody").children("tr").length;
-        console.log("lastth:", lastth);
-        console.log("lasttd:", lasttd);
-        console.log("lasettr:", lasettr);
         if (savetemp == 2) {
             $(".hidechild").hide();
             $(".secondItemHide").hide();
             lastth.style = "display: none"
             for (var i = 0; i < lasttrlength; i++) {
                 $("tbody").children()[i].children[0].style = "display: none"
-                // console.log("lasettr.children[i]:", $("tbody").children()[i].children[20])
             }
         }
     </script>

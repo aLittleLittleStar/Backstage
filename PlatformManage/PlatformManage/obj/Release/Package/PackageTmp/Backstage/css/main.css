@@ -1,0 +1,191 @@
+html body {
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #FFFFFF;
+}
+i {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+a:active, 
+a:hover {
+  text-decoration: none;
+  color: #20a0ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+.current {
+  color: #20a0ff;
+}
+button{
+  outline: none !important;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+  /*IE/7/6*/
+}
+/*定位居中*/
+.middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.s-side {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: #bfcbd9;
+}
+.container-fluid {
+	padding: 0;
+	margin: 0;
+}
+.s-firstItem.first
+{
+    padding-left: 40px;
+    color: #fff;
+}
+
+.s-side .s-firstItem i {
+  font-size: 20px;
+}
+.s-side .s-firstItem span {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 20px;
+  white-space: 10px;
+
+}
+.s-side .first {
+	line-height: 56px;
+}
+.s-side .d-firstNav span {
+  display: inline-block;
+  margin-left: 2%;
+}
+.s-side .d-firstNav i.fr {
+  font-size: 25px;
+}
+.d-firstDrop.s-firstDrop {
+  background: rgb(31, 45, 61);
+}
+.s-firstNav  {
+	padding-left: 10%;
+}
+ul .s-secondItem {
+  padding-left: 34%;
+}    
+.s-secondNav:hover,
+.d-firstNav:hover,
+.s-secondItem:hover,
+.s-firstItem.first:hover{
+	background: #48576a;
+  cursor: pointer;
+  color: #fff;
+}
+.s-side .d-secondDrop {
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.iconRotate {
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+.iconRotateY {
+	transform: rotate(-180deg);
+	transition: transform 0.5s;
+}
+.s-firstDrop,
+.s-secondDrop {
+  display: none;
+}
+
+
+span .glyphicon.glyphicon-pushpin
+{
+	margin-left: 40px;
+}
+.glyphicon-menu-up {
+	  float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.col-3.col-md-2 {
+  padding: 0;
+}
+
+.col-md-10 {
+	position: absolute !important;
+	right: 0;
+	padding: 0;
+  height: 100%;
+
+}
+
+.navbar>.container-fluid .navbar-brand{
+	margin-left: 0;
+}
+.unlogin {
+	margin-right: 40px;
+}
+.navbar-right {
+  margin-right: 0px;
+}
+.glyphicon.glyphicon-log-out {
+	margin-right: 10px;
+}
+
+section {
+  color: #000;
+}
+.col-md-10 section {
+  margin: 0 auto;
+  width: 60%;
+  height: 80%;
+}
+
+.form-horizontal{
+    text-align: center;
+    margin-top: 40px;
+    color: #000;
+}
+.btn.btn-primary.btn-lg{
+  margin-top: 20px;
+}
+.col-md-2 {
+  position: absolute !important;
+  height: 100%;
+}

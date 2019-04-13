@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>森尚宅配全屋定制流程控制系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/jquery.min.js" charset="UTF-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="js/jqPaginator.js"></script>
+    <style>
+
+        body {
+            background: rgb(243, 245, 248);
+            overflow: hidden;
+            border: none;
+        }
+
+        .container-fluid > .navbar-header {
+            height: 56px;
+            line-height: 56px;
+        }
+
+        .login {
+            line-height: 50px;
+            color: #000;
+            margin-right: 30px;
+        }
+
+        .username {
+            margin-left: 8px;
+        }
+
+        .unlogin {
+            margin-right: 40px;
+        }
+
+        .navbar-right {
+            margin-right: 0px;
+        }
+
+        .glyphicon.glyphicon-log-out {
+            margin-right: 10px;
+        }
+
+        .navbar.navbar-default {
+            background: #fff;
+            margin-bottom: 0;
+        }
+
+        .logoimg {
+            width: 40px;
+            float: left;
+            line-height: 56px;
+            margin-left: 30px;
+            margin-top: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="col-3 col-md-2 col-sm-3">
+        <iframe src="slider.html" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!-- 导航栏 -->
+    <div class="col-9 col-md-10 col-sm-9" id="item">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <img src="img/logo.jpg" class="logoimg">
+                    <a class="navbar-brand">森尚宅配全屋定制流程控制系统</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="login">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <label class="username" id="name_label"></label>
+                    </li>
+                    <li class="unlogin">
+                        <a href="login.html">
+                            <span class="glyphicon glyphicon-log-out"></span> 退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <iframe id="changeItem" src="child/view_items.aspx" width="100%" height="100%" style="border: none"></iframe>
+    </div>
+    <script type="text/javascript">
+        document.onload += load();
+        function load() {
+            var arr, reg = new RegExp("(^|)" + "user_data" + "=([^;]*)(;|$)");
+
+            var basesrc = $("#changeItem")[0].src
+            console.log("basesrc:", basesrc)
+
+
+
+
+            if (arr = document.cookie.match(reg)) {
+                // temp对象第3个值保存了Identity的值, 用于显示不同身份用户的可访问页面
+                var temp = arr[2].split('=');
+                var tempspop = temp.pop()
+                localStorage.setItem("tempspop", tempspop);
+
+                console.log("tempspop:", tempspop)
+
+                // 读取用户姓名添加到name_label控件中
+                var savespecies = localStorage.getItem("savespeciesKey");
+                console.log("savespecies:", savespecies);
+                document.getElementById("name_label").innerHTML = savespecies;
+            }
+        }
+    </script>
+</body>
+</html>

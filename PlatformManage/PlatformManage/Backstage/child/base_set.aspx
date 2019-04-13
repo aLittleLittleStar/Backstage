@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8" />
-    <title>基础设置</title>
+    <title>创建项目</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
@@ -107,8 +107,6 @@
             if (savetemp == 2) {
                 $(".btn").hide()
                 $(".navbar-form").hide()
-                
-               console.log("savetemp11111111111111:", savetemp)
             }
         })(jQuery)
     </script>

@@ -15,6 +15,7 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 40px;
+    overflow: auto;
 }
 
 #search .input-group {
@@ -51,3 +52,41 @@
     padding: 7px;
 }
 
+    #search .input-group .search-box {
+        position: fixed;
+        width: 90%;
+    }
+
+    #search .input-group div table {
+        width: 280%;
+    }
+
+    #search .input-group .search-result {
+        padding-top: 40px;
+    }
+/* 查看页面样式修改 */ 
+#view_items {
+    padding-top: 0px;
+}
+
+    #view_items .page-header {
+        margin-left: 9%;
+        margin-right: 7%;
+        margin-top: 0px;
+    }
+
+    #view_items .container {
+        overflow: auto;
+    }
+
+    #view_items .content {
+        width: 2500px;
+    }
+
+    #view_items tbody tr:last-child td > * {
+        float: left;
+    }
+
+    #view_items tbody tr:last-child td input {
+        margin-top: 4px;
+    }

@@ -1,0 +1,53 @@
+﻿/*表格样式调整*/
+/*wardrobe cupboard*/
+.modal-content .modal-body .form-group {
+    height: 34px;
+}
+
+    .modal-content .modal-body .form-group > label {
+        padding-top: 7px;
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+/* 搜索页面样式调整*/
+#search {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#search .input-group {
+    width: 100%;
+}
+
+#search .input-group input:first-child {
+    width: 80%;
+}
+
+#search .input-group input[name=SearchButton] {
+    width: 6%;
+    height: 44px;
+    border-radius: 0px 6px 6px 0px;
+}
+
+#search .input-group div {
+    margin-top: 40px;
+}
+
+#search .input-group div table {
+    width: 86%;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#search .input-group div table tbody tr:first-child th {
+    text-align: center;
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+#search .input-group div table tbody tr > td {
+    padding: 7px;
+}
+

@@ -74,6 +74,7 @@
     <Content Include="Backstage\child\wardrobe.aspx" />
     <Content Include="Backstage\child\water_settings.aspx" />
     <Content Include="Backstage\command\login.ashx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

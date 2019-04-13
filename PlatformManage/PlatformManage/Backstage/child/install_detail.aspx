@@ -101,7 +101,6 @@
                                 <fieldset>
                                     <div
                                         class="input-group date form_datetime"
-                                        data-date="2019-03-1T"
                                         data-link-field="dtp_input1">
                                         <input 
                                             class="form-control" 
@@ -148,7 +147,7 @@
         	$('.form_datetime').datetimepicker({
   	                language:  'zh-CN',
   	                weekStart: 1,
-  	                todayBtn:  1,
+  	                todayBtn:  true,
 		            autoclose: 1,
 		            todayHighlight: 1,
 		            startView: 2,

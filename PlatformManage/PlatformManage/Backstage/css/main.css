@@ -189,3 +189,51 @@ section {
   position: absolute !important;
   height: 100%;
 }
+
+
+
+body {
+    background: rgb(243, 245, 248);
+    overflow: hidden;
+    border: none;
+}
+
+.container-fluid > .navbar-header {
+    height: 56px;
+    line-height: 56px;
+}
+
+.login {
+    line-height: 50px;
+    color: #000;
+    margin-right: 30px;
+}
+
+.username {
+    margin-left: 8px;
+}
+
+.unlogin {
+    margin-right: 40px;
+}
+
+.navbar-right {
+    margin-right: 0px;
+}
+
+.glyphicon.glyphicon-log-out {
+    margin-right: 10px;
+}
+
+.navbar.navbar-default {
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.logoimg {
+    width: 40px;
+    float: left;
+    line-height: 56px;
+    margin-left: 30px;
+    margin-top: 8px;
+}

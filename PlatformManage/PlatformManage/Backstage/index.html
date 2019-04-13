@@ -12,55 +12,6 @@
     <script src="js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="js/jqPaginator.js"></script>
-    <style>
-
-        body {
-            background: rgb(243, 245, 248);
-            overflow: hidden;
-            border: none;
-        }
-
-        .container-fluid > .navbar-header {
-            height: 56px;
-            line-height: 56px;
-        }
-
-        .login {
-            line-height: 50px;
-            color: #000;
-            margin-right: 30px;
-        }
-
-        .username {
-            margin-left: 8px;
-        }
-
-        .unlogin {
-            margin-right: 40px;
-        }
-
-        .navbar-right {
-            margin-right: 0px;
-        }
-
-        .glyphicon.glyphicon-log-out {
-            margin-right: 10px;
-        }
-
-        .navbar.navbar-default {
-            background: #fff;
-            margin-bottom: 0;
-        }
-
-        .logoimg {
-            width: 40px;
-            float: left;
-            line-height: 56px;
-            margin-left: 30px;
-            margin-top: 8px;
-        }
-    </style>
-
 </head>
 <body>
     <div class="col-3 col-md-2 col-sm-3">
@@ -93,24 +44,14 @@
         document.onload += load();
         function load() {
             var arr, reg = new RegExp("(^|)" + "user_data" + "=([^;]*)(;|$)");
-
             var basesrc = $("#changeItem")[0].src
-            console.log("basesrc:", basesrc)
-
-
-
-
             if (arr = document.cookie.match(reg)) {
                 // temp对象第3个值保存了Identity的值, 用于显示不同身份用户的可访问页面
                 var temp = arr[2].split('=');
                 var tempspop = temp.pop()
                 localStorage.setItem("tempspop", tempspop);
-
-                console.log("tempspop:", tempspop)
-
                 // 读取用户姓名添加到name_label控件中
                 var savespecies = localStorage.getItem("savespeciesKey");
-                console.log("savespecies:", savespecies);
                 document.getElementById("name_label").innerHTML = savespecies;
             }
         }

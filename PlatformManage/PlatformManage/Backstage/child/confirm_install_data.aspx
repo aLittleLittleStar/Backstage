@@ -89,7 +89,6 @@
                                 <fieldset>
                                     <div
                                         class="input-group date form_datetime"
-                                        data-date="2019-03-1T"
                                         data-link-field="dtp_input1">
                                         <input id="reserve_time" name="reserve_time" class="form-control" size="16" type="text" value="" readonly runat="server" />
                                         <span class="input-group-addon">
@@ -116,7 +115,7 @@
         	$('.form_datetime').datetimepicker({
   	                language:  'zh-CN',
   	                weekStart: 1,
-  	                todayBtn:  1,
+  	                todayBtn:  true,
 		            autoclose: 1,
 		            todayHighlight: 1,
 		            startView: 2,

@@ -61,12 +61,12 @@
             <li class="first hidechild">
                 <div class="d-firstNav s-firstNav">
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span>添加项目其他信息</span>
+                    <span>添加其他信息</span>
                     <span class="glyphicon glyphicon-menu-up fa-caret-right"></span>
                 </div>
                 <ul class="d-firstDrop s-firstDrop">
                     <div class="s-secondItem">
-                        <li id='getReady'>添加项目信息</li>
+                        <li id='getReady'>添加信息</li>
                     </div>
                 </ul>
             </li>
@@ -98,7 +98,6 @@
     </div>
     <script>
         var savetemp = localStorage.getItem("tempspop");
-        console.log("savetemp:", savetemp);
         if (savetemp == 2) {
             $(".hidechild").hide();
             $(".secondItemHide").hide();

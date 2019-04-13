@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\29176\Desktop\WebSite</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Backstage/child/add_user.aspx">
+      <publishTime>03/31/2019 21:39:03</publishTime>
+    </File>
+    <File Include="Backstage/child/base_set.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/cabinet_body.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/confirm_install_data.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/contract_confirm.aspx">
+      <publishTime>04/03/2019 20:54:16</publishTime>
+    </File>
+    <File Include="Backstage/child/cupboard.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/get_ready.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/install_detail.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/search.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/view_items.aspx">
+      <publishTime>03/31/2019 21:38:22</publishTime>
+    </File>
+    <File Include="Backstage/child/wardrobe.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/child/water_settings.aspx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/command/login.ashx">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/base.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/bootstrap-datetimepicker.min.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/child.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/confirm_install_data.css">
+      <publishTime>03/31/2019 21:39:41</publishTime>
+    </File>
+    <File Include="Backstage/css/iconfont.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/index.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/login.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/main.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/css/modify-child.css">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/img/login.jpg">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/img/logo.jpg">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/index.html">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/js/bootstrap-datetimepicker.min.js">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/js/bootstrap-datetimepicker.zh-CN.js">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/js/jquery-1.8.3.min.js">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/js/jquery.min.js">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/js/main.js">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/login.html">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Backstage/slider.html">
+      <publishTime>04/03/2019 21:13:15</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="bin/PlatformManage.dll">
+      <publishTime>04/12/2019 09:45:32</publishTime>
+    </File>
+    <File Include="bin/PlatformManage.pdb">
+      <publishTime>04/12/2019 09:45:32</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/31/2019 20:38:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/12/2019 09:45:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

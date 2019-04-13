@@ -1,0 +1,8 @@
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.dll.config
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.dll
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\bin\PlatformManage.pdb
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\obj\Release\PlatformManage.csprojAssemblyReference.cache
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\obj\Release\PlatformManage.csproj.CoreCompileInputs.cache
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\obj\Release\PlatformManage.csproj.CopyComplete
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\obj\Release\PlatformManage.dll
+C:\Users\29176\Desktop\作业集合\Backstage\PlatformManage\PlatformManage\obj\Release\PlatformManage.pdb
