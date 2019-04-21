@@ -37,7 +37,8 @@ namespace PlatformManage.Backstage.child
 
         private void create_cmd(ref MySqlCmd.MySqlContext udata) {
             udata.context = "DELETE FROM `user_form` WHERE user_form.sequences =\"" + sequences + "\";"
-                            + "DELETE FROM `order_form` WHERE `SEQUENCES`=\"" + sequences + "\";";
+                            + "DELETE FROM `order_form` WHERE `SEQUENCES`=\"" + sequences + "\";"
+                            + "ALTER TABLE order_form AUTO_INCREMENT=1";
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e) {
