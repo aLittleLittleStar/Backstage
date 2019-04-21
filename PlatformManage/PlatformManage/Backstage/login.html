@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="森尚宅配全屋定制流程控制系统 装修 家装 定制">
+    <meta name="description" content="森尚宅配全屋定制流程控制系统">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <title>登录</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
@@ -53,9 +57,6 @@
                 data: "uname=" + $("#username").val() + "&password=" + $("#password").val(),
                 success: function (data) {
                     if (data.msg == 1) {
-                        // 对代码进行分割得到用户
-                        //var saveroot = data.data.split(";")
-
                         // 得到用户的类别（去掉逗号）
                          var savespecies = data.data;
                         // 将用户类别储存在本地

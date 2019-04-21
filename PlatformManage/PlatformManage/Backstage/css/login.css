@@ -7,11 +7,13 @@ body{
 }
 .form{
 	background: rgba(255,255,255,0.2);
-	width:400px;
+    width: 400px;
 	margin:120px auto;
 }
 .form-horizontal {
     margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 2px;
     overflow: hidden;
 }
 h4.form-title {
@@ -42,6 +44,6 @@ input[type="password"] {
 	padding-left:21px;
 }
 button[type="submit"] {
-    margin-left: 42%;
+    width: 100%;
 }
 

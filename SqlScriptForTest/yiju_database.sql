@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- 主机:                           127.0.0.1
--- 服务器版本:                        5.7.21-log - MySQL Community Server (GPL)
--- 服务器操作系统:                      Win64
--- HeidiSQL 版本:                  9.5.0.5196
+-- Server version:               5.7.21-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL 版本:                  10.1.0.5464
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,27 +12,27 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- 导出 yiju_database 的数据库结构
+-- Dumping database structure for yiju_database
 CREATE DATABASE IF NOT EXISTS `yiju_database` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `yiju_database`;
 
--- 导出  表 yiju_database.manager 结构
-CREATE TABLE IF NOT EXISTS `manager` (managerorder_form
+-- Dumping structure for table yiju_database.manager
+CREATE TABLE IF NOT EXISTS `manager` (
   `account` varchar(10) NOT NULL,
   `password` varchar(15) NOT NULL,
-  `name` varchar(10) NOT NULL DEFAULT 'null',
+  `name` varchar(10) NOT NULL DEFAULT '管理员',
   `Identity` int(1) NOT NULL DEFAULT '1',
   `sequences` int(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.manager 的数据：~1 rows (大约)
+-- Dumping data for table yiju_database.manager: ~1 rows (approximately)
 /*!40000 ALTER TABLE `manager` DISABLE KEYS */;
 INSERT INTO `manager` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
-	('admin_m', 'admin', 'null', 1, 0);
+	('admin_m', 'admin', '管理员', 1, 0);
 /*!40000 ALTER TABLE `manager` ENABLE KEYS */;
 
--- 导出  表 yiju_database.order_form 结构
+-- Dumping structure for table yiju_database.order_form
 CREATE TABLE IF NOT EXISTS `order_form` (
   `sequences` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `contract_numbers` varchar(50) DEFAULT NULL,
@@ -58,61 +58,52 @@ CREATE TABLE IF NOT EXISTS `order_form` (
   `install_left_issue` varchar(100) DEFAULT NULL,
   `comment` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`sequences`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.order_form 的数据：~23 rows (大约)
+-- Dumping data for table yiju_database.order_form: ~22 rows (approximately)
 /*!40000 ALTER TABLE `order_form` DISABLE KEYS */;
 INSERT INTO `order_form` (`sequences`, `contract_numbers`, `items`, `owners`, `home_decoration_designers`, `wooden_decoration_designers`, `preliminary_survey`, `water_electric_time`, `contract_affirm`, `contract_affirm_time`, `reserve_time`, `board_order_time`, `clothes_board_order_time`, `table_board`, `board_door_table`, `other_cabinet`, `board_reserve_time`, `clothes_board_reserve_time`, `waterchannel_wiring`, `hardware_fitting`, `real_install_time`, `install_left_issue`, `comment`) VALUES
-	(1, 'YS-2019-1-20-1', 'asdf', 'ss', '', '', '2018-08-02', '2018-08-03', 'wwwwww', NULL, '2018-09-06', NULL, '2018-08-29', NULL, NULL, 'ddddddddddd', NULL, '2018-08-28', NULL, NULL, NULL, NULL, '是的'),
-	(2, 'YS-2019/1/18 0:00:00-2', 'asdfds', 'sddsf', '', '', '2018-10-03', '2018-10-04', NULL, NULL, NULL, '2018-08-29', NULL, '这是台面', '这是门板', 'wwwwwwwwwwwwwsaf', '2018-08-31', NULL, NULL, NULL, NULL, NULL, 'sddsf'),
-	(3, 'YS-2019-2-22-3', 'sss', 'sss', '', '', '2018-08-29', '2018-08-30', 'yews', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'yews'),
-	(4, 'YS-2019-1-18-4', 'test', 'test', 'null', 'null', '2018-09-12', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '是的'),
-	(5, 'YS-osajfd_fj;lakdsj', '时空', '李三', '张四', '李五', '2018-12-16', '2019-01-12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(6, 'YS-2019-2-22-6', '测试', '测试', '', '', '2018-09-04', '2018-08-30', '是的', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', '2018-09-04', 'wwwwwwwwww', 'sssssssssss'),
-	(7, 'YS-Test-Input', '阎良', '张三', '张四', '李五', '2018-12-15', '2019-01-10', '', '2019-33-26', NULL, NULL, NULL, NULL, NULL, 'wwwwwwwwwwwwwwwwwww', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(8, NULL, 'for test', 'test owner', 'home', 'wooden', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(9, NULL, 'ssstest', 'ssadf', 'lay', 'dd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(10, 'YS-Test-Input', 'asdfasdfas', 'asf', 'asdf', 's', NULL, NULL, '', '2019-03-26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(11, 'YS-Test-Input', 'asdfas', 'ddds', 'sss', 'sdf', NULL, NULL, '', '2019-00-26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(12, 'YS-Test-Input', 'ASDFAS', 'ASFDSD', '', '', '2018-08-29', '2018-09-01', '', '2019-03-26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(13, 'YS-Test-Input', 'asdfasfd', 'asdfsd', '', '', NULL, NULL, '', '2019-03-26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(14, 'YS-Test-Input', 'ss', 'ss', '', '', NULL, NULL, '', 'YYYY-03-DD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(15, NULL, 'ss', 'safd', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'wwwwww', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(16, NULL, 'asdfds', 'asdf', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(17, 'YS-2019-2-22-17', 'sss', 'sss', '', '', NULL, NULL, '是的', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(18, NULL, 'abc', 'yes', 'di', 'di', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(19, NULL, 'asfd', 'qwreipu', 'jvam,nsdf', 'poiwer', '2018-08-29', '2018-08-30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(20, NULL, 'ww', 'wr', 'sadf', 'dd', '2018-09-12', '2018-09-13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(21, NULL, 'we', 'are', 'hello', 'world', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(22, 'YS-2019-2-22-22', 'test', 'sss', 'lay', 'shiry', '2018-08-29', '2018-08-31', '666', '2019-02-22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sssss', 'sssss', NULL, NULL, NULL),
-	(23, NULL, '测试项目', '俊杰', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(24, NULL, 'test_item', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(27, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(28, NULL, 'ForOneTestw', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(29, NULL, 'ForOneTest1', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(35, NULL, '测试项目', '俊杰', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(36, NULL, '测试项目', '俊杰r2q34sf', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(37, NULL, '测试项目', '我是测试', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	(38, NULL, '测试项目', '我是测试1', '李三', '李五', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	(2, NULL, 'ForOneTest', '王老吉', '李三', '赵四', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(3, NULL, 'ForOneTest', '王老吉', '李三', '赵四', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(5, NULL, 'test_item', '王老吉', '李三', '赵四', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(6, NULL, 'test_item', '王老吉', '李三', '赵四', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(7, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(8, NULL, 'test_item', '老王fqwer', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(9, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(10, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(11, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(12, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(13, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(14, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(15, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(16, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(17, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(18, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(19, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(20, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(21, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(22, 'yyy', 'ForOneTest', '老王', '无', '无', NULL, NULL, '', '2019-04-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(23, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(24, NULL, 'ForOneTest', '老王', '无', '无', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `order_form` ENABLE KEYS */;
 
--- 导出  表 yiju_database.root_manager 结构
+-- Dumping structure for table yiju_database.root_manager
 CREATE TABLE IF NOT EXISTS `root_manager` (
   `account` varchar(10) NOT NULL,
   `password` varchar(15) NOT NULL,
-  `name` varchar(10) NOT NULL DEFAULT 'null',
+  `name` varchar(10) NOT NULL DEFAULT '超管',
   `Identity` int(1) NOT NULL DEFAULT '0',
   `sequences` int(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.root_manager 的数据：~1 rows (大约)
+-- Dumping data for table yiju_database.root_manager: ~1 rows (approximately)
 /*!40000 ALTER TABLE `root_manager` DISABLE KEYS */;
 INSERT INTO `root_manager` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
 	('admin_rm', 'admin', 'null', 0, 0);
 /*!40000 ALTER TABLE `root_manager` ENABLE KEYS */;
 
--- 导出  表 yiju_database.user_form 结构
+-- Dumping structure for table yiju_database.user_form
 CREATE TABLE IF NOT EXISTS `user_form` (
   `account` varchar(10) NOT NULL,
   `password` varchar(15) NOT NULL DEFAULT '12345678',
@@ -124,23 +115,34 @@ CREATE TABLE IF NOT EXISTS `user_form` (
   CONSTRAINT `FK_IdentityWithOrder` FOREIGN KEY (`sequences`) REFERENCES `order_form` (`sequences`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  yiju_database.user_form 的数据：~9 rows (大约)
+-- Dumping data for table yiju_database.user_form: ~21 rows (approximately)
 /*!40000 ALTER TABLE `user_form` DISABLE KEYS */;
 INSERT INTO `user_form` (`account`, `password`, `name`, `Identity`, `sequences`) VALUES
-	('-0.121', '12345678', '俊杰', 2, 35),
-	('0.541299', '12345678', '老王', 2, 29),
-	('0da4d833', '12345678', '老王', 2, 28),
-	('425174', '12345678', '我是测试1', 2, 38),
-	('520968', '12345678', '我是测试', 2, 37),
-	('8', '12345678', '俊杰r2q34sf', 2, 36),
-	('admin27老王', '12345678', '老王', 2, 27),
-	('admin_mm', 'admin', '张三', 2, 7),
-	('admin_u', 'admin', '李三', 2, 5),
-	('admin_um', 'admin', 'ss', 2, 1),
-	('test', '12345678', '老王', 2, 24);
+	('157872', '12345678', '老王', 2, 10),
+	('238436', '12345678', '王老吉', 2, 3),
+	('293911', '12345678', '老王', 2, 20),
+	('32408', '12345678', '老王', 2, 19),
+	('360382', '12345678', '老王', 2, 17),
+	('372329', '12345678', '老王', 2, 21),
+	('395172', '12345678', '老王', 2, 9),
+	('408258', '12345678', '王老吉', 2, 6),
+	('521043', '12345678', '老王', 2, 7),
+	('545613', '12345678', '老王', 2, 12),
+	('59733', '12345678', '老王', 2, 16),
+	('603846', '12345678', '老王', 2, 11),
+	('622711', '12345678', '老王', 2, 18),
+	('782580', '12345678', '老王', 2, 23),
+	('8510', '12345678', '王老吉', 2, 5),
+	('882472', '12345678', '王老吉', 2, 2),
+	('916528', '12345678', '老王', 2, 13),
+	('939329', '12345678', '老王fqwer', 2, 8),
+	('945802', '12345678', '老王', 2, 14),
+	('973160', '12345678', '老王', 2, 24),
+	('979428', '12345678', '老王', 2, 15),
+	('979913', '12345678', '老王', 2, 22);
 /*!40000 ALTER TABLE `user_form` ENABLE KEYS */;
 
--- 导出  触发器 yiju_database.order_form_after_insert 结构
+-- Dumping structure for trigger yiju_database.order_form_after_insert
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
 CREATE TRIGGER `order_form_after_insert` AFTER INSERT ON `order_form` FOR EACH ROW BEGIN
@@ -165,4 +167,3 @@ SET SQL_MODE=@OLDTMP_SQL_MODE;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-managerorder_form

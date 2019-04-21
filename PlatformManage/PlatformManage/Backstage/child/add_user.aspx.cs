@@ -25,7 +25,7 @@ namespace PlatformManage.Backstage.child
         /// 填充数据
         /// </summary>
         protected void FilledCurrentDataGrid() {
-            string select_string = "SELECT * FROM USER_FORM";
+            string select_string = "SELECT * FROM USER_FORM ORDER BY `sequences`";
             UtilityEventClass.UtilityFilledGridViewFunction(this.GridView1, display_columns, select_string);
         }
 

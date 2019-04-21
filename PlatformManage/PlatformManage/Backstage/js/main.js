@@ -2,7 +2,7 @@
 * @Author: Star
 * @Date:   2018-11-29 15:39:54
 * @Last Modified by:   Star
-* @Last Modified time: 2018-12-21 20:26:48
+* @Last Modified time: 2019-04-21 16:52:12
 */
 $(function () {
     $('.d-firstNav').click(function (e) {
@@ -18,10 +18,10 @@ $(function () {
 
 
 
-	/**
-	 * @param dom   点击的当前元素
-	 * @param drop  下一级菜单
-	 */
+    /**
+     * @param dom   点击的当前元素
+     * @param drop  下一级菜单
+     */
     function dropSwift(dom, drop) {
         //点击当前元素，收起或者伸展下一级菜单
         dom.next().slideToggle();
@@ -46,48 +46,26 @@ $(function () {
     // 1.获取iframe的src
     child = $(window.parent.document).find("#changeItem").attr("src");
     // 设置点击事件
-    $(".first").on("click", '#addUser', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/add_user.aspx");
-    })
-    $(".first").on("click", '#userInfo', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/user_info.aspx");
-    })
-    $(".first").on("click", '#baseSet', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/base_set.aspx");
-    })
-    $(".first").on("click", '#viewItems', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/view_items.aspx");
-    })
-    $(".first").on("click", '#waterSeting', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/water_settings.aspx");
-    })
-    $(".first").on("click", '#contractConfirm', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/contract_confirm.aspx");
-    })
-    $(".first").on("click", '#confirmInstallData', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/confirm_install_data.aspx");
-    })
+    changeChild('#addUser', 'child/add_user.aspx');
+    changeChild('#userInfo', 'child/user_info.aspx');
+    changeChild('#baseSet', 'child/base_set.aspx');
+    changeChild('#viewItems', 'child/view_items.aspx');
+    changeChild('#waterSeting', 'child/water_settings.aspx');
+    changeChild('#contractConfirm', 'child/contract_confirm.aspx');
+    changeChild('#confirmInstallData', 'child/confirm_install_data.aspx');
+    changeChild('#cupboard', 'child/cupboard.aspx');
+    changeChild('#wardrobe', 'child/wardrobe.aspx');
+    changeChild('#other_cabinet_body', 'child/cabinet_body.aspx');
+    changeChild('#getReady', 'child/get_ready.aspx');
+    changeChild('#search', 'child/search.aspx');
+    changeChild('#installDetail', 'child/install_detail.aspx');
 
-    $(".first").on("click", '#cupboard', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/cupboard.aspx");
-    })
-    $(".first").on("click", '#wardrobe', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/wardrobe.aspx");
-    })
-    $(".first").on("click", '#other_cabinet_body', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/cabinet_body.aspx");
-    })
-
-    $(".first").on("click", '#getReady', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/get_ready.aspx");
-    })
-    $(".first").on("click", '#search', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/search.aspx");
-    })
-
-    $(".first").on("click", '#installDetail', function () {
-        $(window.parent.document).find("#changeItem").attr("src", "child/install_detail.aspx");
-    })
+    // 封装点击事件函数
+    function changeChild(childName, url) {
+        $(".first").on("click", childName, function () {
+            $(window.parent.document).find("#changeItem").attr("src", url);
+        })
+    }
 
     // 设置点击slider侧边栏item时颜色变化
     $(".s-side .s-secondItem li").click(function () {
