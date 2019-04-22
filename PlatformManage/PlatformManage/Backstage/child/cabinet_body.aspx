@@ -16,7 +16,7 @@
         <section id="userList">
             <div class="container">
                 <div class="form-group">
-                    <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入项目名或业主" runat="server" />
+                    <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入合同编号或项目名或业主" runat="server" />
                     <asp:Button ID="SearchButton" Text="查询" CssClass="btn btn-primary btn-sm glyphicon glyphicon-search" runat="server" OnClick="SearchButton_Click" />
                 </div>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="7" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
