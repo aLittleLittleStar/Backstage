@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8" />
-    <title>添加用户</title>
+    <title>修改用户密码</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../js/jquery.min.js" charset="UTF-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
@@ -16,13 +16,6 @@
        <section id="userList">
         <div class="container">
             <div class="nav">
-                <div class="btn btn-primary btn"
-                     data-toggle="modal"
-                     data-target="#addUser"
-                     style="margin-top: 8px">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    添加用户
-                </div>
                 <div class="navbar-form navbar-right" role="search">
                     <div class="form-group">
                         <input id="search_text" name="search_text" type="text" class="form-control" placeholder="请输入账号或姓名" runat="server"/>
@@ -33,6 +26,9 @@
             <!-- 添加控件 -->
             <div id="data_grid_form">
                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="7" OnPageIndexChanging="GridView1_PageIndexChanging">
+                        <Columns>
+                            <asp:CommandField ButtonType="Button" HeaderText="操作" SelectText="修改用户密码" ShowSelectButton="True" ControlStyle-CssClass="btn btn-primary btn-sm" />
+                        </Columns>
                         <PagerSettings PageButtonCount="5" />
                         <PagerTemplate>
                             <asp:Label ID="lblPage" CssClass="PagerFont" runat="server" Text='<%# "第" + (((GridView)Container.NamingContainer).PageIndex + 1)  + "页/共" + (((GridView)Container.NamingContainer).PageCount) + "页" %> '></asp:Label>
@@ -57,14 +53,14 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h3 class="modal-title" id="myModalLabel">添加用户</h3>
+                    <h3 class="modal-title" id="myModalLabel">修改用户密码</h3>
                 </div>
                 <div class="modal-body" id="modal_body" runat="server">
                     <div class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="firstname" class="col-sm-2 control-label">账号</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="account" name="account" placeholder="账号" runat="server"/>
+                                <input type="text" class="form-control" id="account" name="account" disabled="disabled" runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -74,15 +70,21 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="firstname" class="col-sm-2 control-label">密码</label>
+                            <label for="firstname" class="col-sm-2 control-label">旧密码</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="firstname" placeholder="密码" runat="server"/>
+                                <input type="text" class="form-control" id="firstname" placeholder="旧密码" runat="server"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="lastname" class="col-sm-2 control-label">确认密码</label>
+                            <label for="lastname" class="col-sm-2 control-label">新密码</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="lastname" placeholder="确认密码" runat="server"/>
+                                <input type="text" class="form-control" id="lastname" placeholder="新密码" runat="server"/>
+                            </div>
+                        </div>
+                       <div class="form-group">
+                            <label for="lastname" class="col-sm-2 control-label">确认新密码</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="Text1" placeholder="确认新密码" runat="server"/>
                             </div>
                         </div>
                     </div>
